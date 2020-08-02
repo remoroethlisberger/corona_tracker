@@ -10,43 +10,38 @@ import {
   interpolateRgbBasisClosed,
   interpolateRgbBasis,
   interpolateRgb,
-  min,
 } from 'd3';
 import { useTranslation, initReactI18next } from 'react-i18next';
 
 const data = require('./data.json');
-
-let mindate = '2025-01-01';
 let maxdate = '2020-01-01';
 data.forEach((el) => {
   if (el.date >= maxdate) {
     maxdate = el.date;
   }
-  if (el.date <= mindate) {
-    mindate = el.date;
-  }
 });
-
-const steps = Math.floor(
-  (new Date(maxdate) - new Date(mindate)) / (1000 * 60 * 60 * 24)
-);
 
 const Map = () => {
   const { t } = useTranslation();
   const [rerender, setRerender] = useState(true);
-  const [currentStep, setCurrentStep] = useState(steps);
   const [node, setNode] = useState(undefined);
   const [tooltip, setTooltip] = useState(undefined);
 
   const isMobile = window.innerWidth <= 500;
 
+  const handleClick = (d) => {};
+
   const formatCases = (cases) => {
     let str = '';
     let sum = 0;
-
     for (let i = 0; i < cases.length; i++) {
-      sum += cases[i].cases;
-      str += cases[i].date + ': ' + cases[i].cases + ' ' + '<br/>';
+      let delta = new Date() - new Date(cases[i].date);
+      delta = delta / 1000 / 60 / 60 / 24 / 10;
+      if (delta <= 1) {
+        debugger;
+        sum += cases[i].cases;
+        str += cases[i].date + ': ' + cases[i].cases + ' ' + '<br/>';
+      }
     }
     if (str.length) {
       return t('Fälle der letzten zehn Tage') + `: ${sum}<br/>` + str;
@@ -56,18 +51,8 @@ const Map = () => {
   };
 
   const beginHover = (id, name) => {
-    let cmaxdate = new Date(maxdate);
-    cmaxdate.setDate(cmaxdate.getDate() - currentStep + 1);
-    let cmindate = new Date(maxdate);
-    cmindate.setDate(cmindate.getDate() - 10 - currentStep + 1);
-    debugger;
-
-    let cases = data.filter((d) => {
-      return (
-        d.id == id &&
-        new Date(d.date) <= cmaxdate &&
-        new Date(d.date) >= cmindate
-      );
+    const cases = data.filter((d) => {
+      return d.id == id;
     });
 
     select('[class=tooltip]')
@@ -116,15 +101,7 @@ const Map = () => {
       .attr('stroke', 'black')
       .each(function (d, i) {
         let cases = data.filter((c) => {
-          let cmaxdate = new Date(maxdate);
-          cmaxdate.setDate(cmaxdate.getDate() - currentStep);
-          let cmindate = new Date(maxdate);
-          cmindate.setDate(cmindate.getDate() - 10 - currentStep);
-          return (
-            c.id == d.id &&
-            new Date(c.date) <= cmaxdate &&
-            new Date(c.date) >= cmindate
-          );
+          return c.id == d.id;
         });
         let sum = 0;
         for (let k = 0; k < cases.length; k++) {
@@ -138,11 +115,7 @@ const Map = () => {
           .attr('d', geoPath().projection(scale(s.k, s.w))(d))
           //.style('transform', 'translate(-100px, 0px)')
           .attr('fill', colorScale(sum))
-          .on('click', (d) => {
-            select(this).raise();
-            select(this).style('stroke', 'white');
-            beginHover(d.id, d.properties.name);
-          })
+          .on('click', (d) => beginHover(d.id, d.properties.name))
           .on('mouseenter', (d) => {
             select(this).raise();
             select(this).style('stroke', 'white');
@@ -158,55 +131,7 @@ const Map = () => {
     countries.exit().remove();
   };
 
-  const playback = () => {
-    if (currentStep == 0) {
-      setCurrentStep(steps);
-    } else {
-      setCurrentStep((currentStep - 1) % steps);
-    }
-  };
-
   useEffect(() => {
-    setTimeout(playback, 1500);
-    const countries = select('g')
-      //.attr('transform', 'translate(-400, 0)')
-      .selectAll('path');
-    let cmaxdate = new Date(maxdate);
-    cmaxdate.setDate(cmaxdate.getDate() - currentStep + 1);
-    let cmindate = new Date(maxdate);
-    cmindate.setDate(cmindate.getDate() - 10 - currentStep + 1);
-
-    countries.each(function (d, i) {
-      let cases = data.filter((c) => {
-        return (
-          c.id == d.id &&
-          new Date(c.date) <= cmaxdate &&
-          new Date(c.date) >= cmindate
-        );
-      });
-      let sum = 0;
-      for (let k = 0; k < cases.length; k++) {
-        sum += cases[k].cases;
-      }
-      select(this)
-        .attr('fill', colorScale(sum))
-        .on('click', (d) => beginHover(d.id, d.properties.name))
-        .on('mouseenter', (d) => {
-          select(this).raise();
-          select(this).style('stroke', 'white');
-          beginHover(d.id, d.properties.name);
-        })
-        .on('mouseleave', (d) => {
-          select(this).transition().style('stroke', 'black');
-          //endHover(d.id);
-        });
-    });
-
-    select('.tooltip').style('opacity', 0);
-  }, [currentStep]);
-
-  useEffect(() => {
-    debugger;
     if (rerender) {
       if (node) {
         let tp = select('body')
@@ -220,7 +145,7 @@ const Map = () => {
         setTooltip(tp);
       }
     }
-  }, [node, rerender]);
+  }, [node]);
 
   return (
     <div className="container-fluid">
