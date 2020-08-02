@@ -21,7 +21,7 @@ data.forEach((el) => {
   }
 });
 
-const Map = () => {
+const Map = (props) => {
   const { t } = useTranslation();
   const [rerender, setRerender] = useState(true);
   const [node, setNode] = useState(undefined);
@@ -153,8 +153,8 @@ const Map = () => {
         <div className="col-12 text-center">
           <div
             style={{
-              maxHeight: isMobile ? '15vh' : '5vh',
-              height: isMobile ? '15vh' : '5vh',
+              maxHeight: isMobile ? '15vh' : '10vh',
+              height: isMobile ? '15vh' : '10vh',
             }}
           >
             <h2>{t('Aktuelle Corona Fälle im Kanton Bern')}</h2>

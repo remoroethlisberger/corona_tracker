@@ -20,7 +20,7 @@ def create_data():
 
     if(df.shape[0] != merged.shape[0]):
         print("Not all data moved over")
-        print(merged.size)
+        print(merged.shape[0])
 
 
 if __name__ == "__main__":

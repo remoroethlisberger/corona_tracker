@@ -32,7 +32,6 @@ def main():
     df = pd.read_csv(path+'cases.csv', parse_dates=['date'])
     max_date = df['date'].max()
 
-    print("Looking for new data")
     for tr in tbody.find_all("tr"):
         date = None
         list_of_cases = []
@@ -66,8 +65,6 @@ def main():
                 new_data_found = True
                 print(pd.DataFrame(list_of_cases))
                 df = df.append(list_of_cases, ignore_index=True)
-            else:
-                print("No new data found...")
 
     df = df.sort_values(by='date', ascending=False)
     df.to_csv(path + 'cases.csv', index=False, encoding='utf8')
