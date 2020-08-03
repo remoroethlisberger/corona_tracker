@@ -43,7 +43,11 @@ const Map = (props) => {
     }
     if (str.length) {
       return (
-        '<table class="table table-striped"><thead><tr><td class="text-left" style="padding-left: 5px;">Date</td><td>Cases</td></tr></thead>' +
+        '<table class="table table-striped"><thead><tr><td class="text-left" style="padding-left: 5px;">' +
+        t('Datum') +
+        '</td><td>' +
+        t('Fälle') +
+        '</td></tr></thead>' +
         '<tbody>' +
         str +
         '</tbody>' +
