@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { geoPath, geoTransform } from 'd3-geo';
 import municipalities from './be-municipalties-geo.json';
-import {
-  select,
-  scaleLinear,
-  interpolateHclLong,
-  zoom,
-  event,
-  interpolateRgbBasisClosed,
-  interpolateRgbBasis,
-  interpolateRgb,
-} from 'd3';
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { select, scaleLinear, zoom, event, interpolateRgb } from 'd3';
+import { useTranslation } from 'react-i18next';
+
+import './App.css';
 
 const data = require('./data.json');
 let maxdate = '2020-01-01';
@@ -40,11 +33,25 @@ const Map = (props) => {
       if (delta <= 1) {
         debugger;
         sum += cases[i].cases;
-        str += cases[i].date + ': ' + cases[i].cases + ' ' + '<br/>';
+        str +=
+          '<tr><td>' +
+          cases[i].date +
+          '</td><td class="text-center">' +
+          cases[i].cases +
+          '</td></tr>';
       }
     }
     if (str.length) {
-      return t('Fälle der letzten zehn Tage') + `: ${sum}<br/>` + str;
+      return (
+        '<table class="table table-striped"><thead><tr><td class="text-left" style="padding-left: 5px;">Date</td><td>Cases</td></tr></thead>' +
+        '<tbody>' +
+        str +
+        '</tbody>' +
+        '<tfoot>' +
+        '<tr><td>Total<sup>1</sup>:</td><td>' +
+        sum +
+        '</td></tr></tfoot></table>'
+      );
     } else {
       return t('Keine aktuelle Fälle');
     }
@@ -58,7 +65,7 @@ const Map = (props) => {
     select('[class=tooltip]')
       .style('opacity', 1)
       .style('padding', '5px')
-      .html(`${name} <br/>` + formatCases(cases))
+      .html(`<strong>${name}</strong><br/>` + formatCases(cases))
       .style('left', event.pageX + 20 + 'px')
       .style('top', event.pageY + 20 + 'px');
   };
@@ -137,9 +144,7 @@ const Map = (props) => {
         let tp = select('body')
           .append('div')
           .attr('class', 'tooltip')
-          .style('opacity', 0)
-          .style('position', 'fixed')
-          .style('background-color', 'white');
+          .style('opacity', 0);
         render();
         setRerender(false);
         setTooltip(tp);
@@ -153,8 +158,8 @@ const Map = (props) => {
         <div className="col-12 text-center">
           <div
             style={{
-              maxHeight: isMobile ? '15vh' : '10vh',
-              height: isMobile ? '15vh' : '10vh',
+              maxHeight: isMobile ? '15vh' : '8vh',
+              height: isMobile ? '15vh' : '8vh',
             }}
           >
             <h2>{t('Aktuelle Corona Fälle im Kanton Bern')}</h2>

@@ -2,7 +2,7 @@
 set -a
 source .env
 set +a
-npm run build
+/usr/local/bin/npm run build
 ftp -n $DEPLOY_HOST <<SCRIPT
 user $USER $PASSWD
 cd web/corona_tracker/
