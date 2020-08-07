@@ -14,6 +14,9 @@ import {
 } from 'd3';
 import { useTranslation, initReactI18next } from 'react-i18next';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+
 const data = require('./data.json');
 
 let mindate = '2025-01-01';
@@ -35,6 +38,8 @@ const Map = () => {
   const { t } = useTranslation();
   const [rerender, setRerender] = useState(true);
   const [currentStep, setCurrentStep] = useState(steps);
+  const [timeoutvar, setTimeoutVar] = useState(undefined);
+  const [speed, setSpeed] = useState(1000);
   const [node, setNode] = useState(undefined);
   const [tooltip, setTooltip] = useState(undefined);
 
@@ -60,7 +65,6 @@ const Map = () => {
     cmaxdate.setDate(cmaxdate.getDate() - currentStep + 1);
     let cmindate = new Date(maxdate);
     cmindate.setDate(cmindate.getDate() - 10 - currentStep + 1);
-    debugger;
 
     let cases = data.filter((d) => {
       return (
@@ -144,6 +148,8 @@ const Map = () => {
             beginHover(d.id, d.properties.name);
           })
           .on('mouseenter', (d) => {
+            clearTimeout(timeoutvar);
+            setTimeoutVar(undefined);
             select(this).raise();
             select(this).style('stroke', 'white');
             beginHover(d.id, d.properties.name);
@@ -167,14 +173,15 @@ const Map = () => {
   };
 
   useEffect(() => {
-    setTimeout(playback, 1500);
+    var timeout = setTimeout(playback, speed);
+    setTimeoutVar(timeout);
     const countries = select('g')
       //.attr('transform', 'translate(-400, 0)')
       .selectAll('path');
     let cmaxdate = new Date(maxdate);
     cmaxdate.setDate(cmaxdate.getDate() - currentStep + 1);
     let cmindate = new Date(maxdate);
-    cmindate.setDate(cmindate.getDate() - 10 - currentStep + 1);
+    cmindate.setDate(cmindate.getDate() - steps - currentStep + 1);
 
     countries.each(function (d, i) {
       let cases = data.filter((c) => {
@@ -192,6 +199,8 @@ const Map = () => {
         .attr('fill', colorScale(sum))
         .on('click', (d) => beginHover(d.id, d.properties.name))
         .on('mouseenter', (d) => {
+          clearTimeout(timeout);
+          setTimeoutVar(undefined);
           select(this).raise();
           select(this).style('stroke', 'white');
           beginHover(d.id, d.properties.name);
@@ -222,6 +231,9 @@ const Map = () => {
     }
   }, [node, rerender]);
 
+  let cmaxdate = new Date(maxdate);
+  cmaxdate.setDate(cmaxdate.getDate() - currentStep + 1);
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -233,6 +245,27 @@ const Map = () => {
             }}
           >
             <h2>{t('Aktuelle Corona Fälle im Kanton Bern')}</h2>
+          </div>
+          <div className="ctrls d-flex flex-column justify-content-center">
+            <div className="">
+              Datum: {cmaxdate.toLocaleDateString('de-CH', '%dd%mm%YYYY')}
+            </div>
+            <button
+              className="btn btn-primary mx-auto"
+              style={{ maxWidth: '100px' }}
+              onClick={() => {
+                if (timeoutvar) {
+                  clearTimeout(timeoutvar);
+                  setTimeoutVar(undefined);
+                } else {
+                  let tvar = setTimeout(playback, speed);
+                  setTimeoutVar(tvar);
+                }
+              }}
+            >
+              <FontAwesomeIcon icon={timeoutvar ? faPause : faPlay} />{' '}
+              {timeoutvar ? 'Pause' : 'Play'}
+            </button>
           </div>
         </div>
         <div className="col-12">
@@ -247,7 +280,8 @@ const Map = () => {
         <div className="col-12">
           <div className="d-flex flex-row justify-content-around">
             <div>
-              {t('Stand')}: {new Date(maxdate).toLocaleDateString()}
+              {t('Stand')}:{' '}
+              {new Date(maxdate).toLocaleDateString('de-CH', '%dd%mm%YYYY')}
             </div>
             <div>
               {t('Quelle')}:{' '}
