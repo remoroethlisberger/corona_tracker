@@ -53,8 +53,8 @@ const Map = (props) => {
       cases: recent_cases,
       sum: sum,
       show: true,
-      left: event.pageX + 20,
-      top: event.pageY + 20,
+      left: event.pageX + 10,
+      top: event.pageY + 10 - window.scrollY,
     });
   };
 
