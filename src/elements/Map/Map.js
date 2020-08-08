@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useMapContext } from '../../hooks/useMapContext';
 import Tooltip from './Tooltip';
 
+import ReactGA from 'react-ga';
+
 import {
   select,
   zoom,
@@ -13,6 +15,8 @@ import {
   selectAll,
 } from 'd3';
 import { useTranslation } from 'react-i18next';
+
+ReactGA.initialize('UA-174993755-1');
 
 const Map = (props) => {
   const { t } = useTranslation();
@@ -46,6 +50,11 @@ const Map = (props) => {
       } else {
         return -1;
       }
+    });
+
+    ReactGA.event({
+      category: 'Corona Map',
+      action: 'Clicked on ' + name,
     });
 
     setTooltip({
