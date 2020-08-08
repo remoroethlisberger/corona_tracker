@@ -31,8 +31,10 @@ const Tooltip = (props) => {
                 })}
               </tbody>
               <tfoot>
-                <td>Total:</td>
-                <td>{props.sum}</td>
+                <tr>
+                  <td>Total:</td>
+                  <td>{props.sum}</td>
+                </tr>
               </tfoot>
             </table>
           ) : (

@@ -16,7 +16,7 @@ def create_data():
     df.place = df.place.astype(str)
     merged = df.merge(ids, left_on='place', right_on='name')
     merged.drop(columns=['name'])
-    merged.to_json(path + '../src/data.json', orient='records')
+    merged.to_json(path + '../src/assets/data/BE-cases.json', orient='records')
 
     if(df.shape[0] != merged.shape[0]):
         print("Not all data moved over")

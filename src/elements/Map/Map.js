@@ -31,17 +31,16 @@ const Map = (props) => {
     });
 
     let sum = 0;
-
+    let recent_cases = [];
     for (let k = 0; k < cases.length; k++) {
       let delta = (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / 10;
       if (delta <= 1 && delta >= 0) {
         sum += cases[k].cases;
-      } else {
-        cases.splice(k, 1);
+        recent_cases.push({ date: cases[k].date, cases: cases[k].cases });
       }
     }
 
-    cases.sort((x, y) => {
+    recent_cases.sort((x, y) => {
       if (x.date < y.date) {
         return 1;
       } else {
@@ -51,7 +50,7 @@ const Map = (props) => {
 
     setTooltip({
       place: name,
-      cases: cases,
+      cases: recent_cases,
       sum: sum,
       show: true,
       left: event.pageX + 20,
@@ -139,7 +138,12 @@ const Map = (props) => {
               sum += casesById.cases[k].cases;
             }
           }
-          select(this).attr('fill', colorScale(sum));
+          select(this)
+            .attr('fill', colorScale(sum))
+            .on('mouseenter', (d) => {
+              select(this).raise().style('stroke', 'white');
+              beginHover(d.id, d.properties.name);
+            });
         }
       });
       dispatch({ type: 'rerendered' });

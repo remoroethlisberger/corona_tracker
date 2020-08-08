@@ -6,7 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 const PageWrapper = (props) => {
   return (
-    <div className="container">
+    <div className="container p-0">
       <Navbar {...props} />
       <div className="main p-2">{props.children}</div>
       <footer>

@@ -78,5 +78,5 @@ if __name__ == "__main__":
         print("Deployment triggered")
         create_data()
         FNULL = open(os.devnull, 'w')
-        subprocess.call(['sh', './deploy.sh'], cwd='/Users/Remo/Desktop/corona_tracker',
+        subprocess.call(['sh', './deploy.sh'], cwd='/Users/Remo/Desktop/corona_tracker/src/scripts',
                         stdout=FNULL)
