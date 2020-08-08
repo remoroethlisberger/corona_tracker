@@ -21,6 +21,11 @@ const FAQ = (props) => {
           </a>
           <br />
           Webdesign: <a href="https://waremama.ch">waremama.ch</a>
+          <br />
+          Github Repository:{' '}
+          <a href="https://github.com/remoroethlisberger/corona_tracker">
+            https://github.com/remoroethlisberger/corona_tracker
+          </a>
         </li>
       </ul>
     </PageWrapper>
