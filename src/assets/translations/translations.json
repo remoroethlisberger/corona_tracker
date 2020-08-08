@@ -1,0 +1,28 @@
+{
+  "en": {
+    "translation": {
+      "play": "Play",
+      "pause": "Pause",
+      "Aktuelle Corona Fälle im Kanton Bern": "Current COVID cases within canton of Bern",
+      "Keine aktuelle Fälle": "No current incidents",
+      "Fälle der letzten zehn Tage": "Cases over the last ten days",
+      "Quelle": "Source",
+      "Fälle": "Cases",
+      "Datum": "Date",
+      "Stand": "Last update"
+    }
+  },
+  "de": {
+    "translation": {
+      "play": "Start",
+      "pause": "Pause",
+      "Aktuelle Corona Fälle im Kanton Bern": "Aktuelle Corona Fälle im Kanton Bern",
+      "Keine aktuelle Fälle": "Keine aktuelle Fälle",
+      "Fälle der letzten zehn Tage": "Fälle der letzten zehn Tage",
+      "Quelle": "Quelle",
+      "Fälle": "Fälle",
+      "Datum": "Datum",
+      "Stand": "Letztes Update"
+    }
+  }
+}

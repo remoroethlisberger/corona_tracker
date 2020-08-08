@@ -1,6 +1,6 @@
 #!/bin/bash
 set -a
-source .env
+source ./.env
 set +a
 /usr/local/bin/npm run build
 ftp -n $DEPLOY_HOST <<SCRIPT
