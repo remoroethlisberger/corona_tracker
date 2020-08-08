@@ -10,6 +10,7 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import translations from './assets/translations/translations.json';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
 
 i18n
   .use(Backend)
@@ -31,7 +32,8 @@ ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <Switch>
-        <Route key="main" path="/contact" component={Contact} />
+        <Route key="contact" path="/contact" component={Contact} />
+        <Route key="faq" path="/faq" component={FAQ} />
         <Route key="main" component={CoronaTracker} />
       </Switch>
     </HashRouter>

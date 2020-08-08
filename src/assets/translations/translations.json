@@ -3,26 +3,29 @@
     "translation": {
       "play": "Play",
       "pause": "Pause",
-      "Aktuelle Corona Fälle im Kanton Bern": "Current COVID cases within canton of Bern",
-      "Keine aktuelle Fälle": "No current incidents",
-      "Fälle der letzten zehn Tage": "Cases over the last ten days",
-      "Quelle": "Source",
-      "Fälle": "Cases",
-      "Datum": "Date",
-      "Stand": "Last update"
+      "date": "Date",
+      "update": "Updated",
+      "source": "Source",
+      "contact": "Contact",
+      "data": "Data",
+      "idea-and-realisation": "Idea and realization",
+      "technology": "Technology",
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
     }
   },
   "de": {
     "translation": {
       "play": "Start",
       "pause": "Pause",
-      "Aktuelle Corona Fälle im Kanton Bern": "Aktuelle Corona Fälle im Kanton Bern",
-      "Keine aktuelle Fälle": "Keine aktuelle Fälle",
-      "Fälle der letzten zehn Tage": "Fälle der letzten zehn Tage",
-      "Quelle": "Quelle",
-      "Fälle": "Fälle",
-      "Datum": "Datum",
-      "Stand": "Letztes Update"
+      "date": "Datum",
+      "update": "Letzte Aktualisierung",
+      "source": "Quelle",
+      "contact": "Kontakt",
+      "data": "Daten",
+      "idea-and-realisation": "Idee und Realisation",
+      "technology": "Technologie",
+
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
     }
   }
 }

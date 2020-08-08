@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PageWrapper.css';
 
+import Navbar from '../Navbar/Navbar';
+
 const PageWrapper = (props) => {
   return (
-    <div>
-      <div>
-        <Link to={'/contact'}>Kontakt</Link>
-      </div>
-      <div>{props.children}</div>
-      <div>Body</div>
+    <div className="container">
+      <Navbar {...props} />
+      <div className="main p-2">{props.children}</div>
+      <footer>
+        <div className="d-flex flex-row justify-content-around">
+          <div className="small">
+            <a href="https://waremama.ch">waremama.ch</a>
+          </div>
+          <p className="small">Remo Röthlisberger, 2020</p>
+        </div>
+      </footer>
     </div>
   );
 };

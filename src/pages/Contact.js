@@ -1,12 +1,11 @@
 import React from 'react';
 import PageWrapper from '../elements/PageWrapper/PageWrapper';
+import { useTranslation } from 'react-i18next';
 
-const Contact = () => {
-  return (
-    <PageWrapper>
-      <a href="http://waremama.ch">waremama.ch</a>
-    </PageWrapper>
-  );
+const Contact = (props) => {
+  const { t } = useTranslation();
+
+  return <PageWrapper {...props}></PageWrapper>;
 };
 
 export default Contact;

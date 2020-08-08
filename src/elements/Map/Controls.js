@@ -16,7 +16,7 @@ const Controls = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div className="d-flex flex-row justify-content-around">
+    <div className="mt-2 d-flex flex-row justify-content-around">
       <button
         className="btn btn-primary"
         onClick={() => dispatch({ type: 'previous' })}

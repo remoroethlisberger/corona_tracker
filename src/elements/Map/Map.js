@@ -14,6 +14,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const Map = (props) => {
+  const { t } = useTranslation();
   const [mapState, dispatch] = useMapContext();
   const [node, setNode] = useState();
   const { i18n } = useTranslation();
@@ -29,7 +30,7 @@ const Map = (props) => {
         .selectAll('path')
         .data(mapState.map.features);
 
-      select('div.map').call(
+      select('svg.map').call(
         zoom().on('zoom', () => {
           svg.attr('transform', event.transform);
         })
@@ -61,7 +62,7 @@ const Map = (props) => {
           select(this)
             .attr('d', geoPath().projection(undefined)(d))
             // projection(scale())
-            //.style('transform', 'translate(-100px, 0px)')
+            .style('transform', 'translate(-220px, -10px)')
             .attr('fill', colorScale(sum))
             .on('click', (d) => {
               //beginHover(d.id, d.properties.name)
@@ -122,10 +123,29 @@ const Map = (props) => {
   }, [mapState.play]);
 
   return (
-    <div className="map" style={{ height: '100vh' }}>
-      {mapState.date.toLocaleDateString(i18n.language)}
-      <svg width="100%" height="100%" ref={(node) => setNode(node)}></svg>
-    </div>
+    <>
+      <div className="text-center">
+        <h4>
+          {t('date') + ': '}
+          {mapState.date.toLocaleDateString(i18n.language)}
+        </h4>
+      </div>
+      <div
+        className="mx-auto map-container text-center"
+        style={{
+          height: '500px',
+          overflow: 'hidden',
+          maxWidth: '600px',
+        }}
+      >
+        <svg
+          className="map border border-dark"
+          width="100%"
+          height="500px"
+          ref={(node) => setNode(node)}
+        ></svg>
+      </div>
+    </>
   );
 };
 export default Map;

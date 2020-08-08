@@ -9,8 +9,6 @@ const map = require('../../assets/data/be-municipalties-geo.json');
 const MapContext = createContext();
 
 const dispatch = (state, action) => {
-  console.log(state);
-  console.warn(action.type);
   switch (action.type) {
     case 'next':
       if (state.date < state.maxDate) {
@@ -32,7 +30,7 @@ const dispatch = (state, action) => {
     case 'play':
       if (state.date >= state.maxDate) {
         state.play = true;
-        state.date = state.minDate;
+        state.date = new Date(state.minDate);
         state.interval = action.value;
       } else {
         state.play = true;
