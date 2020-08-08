@@ -7,6 +7,7 @@
       "update": "Updated",
       "source": "Source",
       "contact": "Contact",
+      "cases": "Cases",
       "data": "Data",
       "idea-and-realisation": "Idea and realization",
       "technology": "Technology",
@@ -21,10 +22,10 @@
       "update": "Letzte Aktualisierung",
       "source": "Quelle",
       "contact": "Kontakt",
+      "cases": "Fälle",
       "data": "Daten",
       "idea-and-realisation": "Idee und Realisation",
       "technology": "Technologie",
-
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
     }
   }

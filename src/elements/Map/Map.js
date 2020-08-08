@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMapContext } from '../../hooks/useMapContext';
+import Tooltip from './Tooltip';
 
 import {
   select,
@@ -17,11 +18,46 @@ const Map = (props) => {
   const { t } = useTranslation();
   const [mapState, dispatch] = useMapContext();
   const [node, setNode] = useState();
+  const [tooltip, setTooltip] = useState({});
   const { i18n } = useTranslation();
   const colorScale = scaleLinear()
     .domain([0, 15])
     .range(['#5D3A9B', '#E66100'])
     .interpolate(interpolateRgb);
+
+  const beginHover = (id, name) => {
+    const cases = mapState.data.filter((d) => {
+      return d.id == id;
+    });
+
+    let sum = 0;
+
+    for (let k = 0; k < cases.length; k++) {
+      let delta = (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / 10;
+      if (delta <= 1 && delta >= 0) {
+        sum += cases[k].cases;
+      } else {
+        cases.splice(k, 1);
+      }
+    }
+
+    cases.sort((x, y) => {
+      if (x.date < y.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    setTooltip({
+      place: name,
+      cases: cases,
+      sum: sum,
+      show: true,
+      left: event.pageX + 20,
+      top: event.pageY + 20,
+    });
+  };
 
   useEffect(() => {
     if (node) {
@@ -69,11 +105,11 @@ const Map = (props) => {
             })
             .on('mouseenter', (d) => {
               select(this).raise().style('stroke', 'white');
-              //              beginHover(d.id, d.properties.name);
+              beginHover(d.id, d.properties.name);
             })
             .on('mouseleave', (d) => {
               select(this).transition().style('stroke', 'black');
-              //endHover(d.id);
+              setTooltip(undefined);
             })
             .attr('id', d.id);
         });
@@ -138,6 +174,7 @@ const Map = (props) => {
           maxWidth: '600px',
         }}
       >
+        <Tooltip {...tooltip} />
         <svg
           className="map border border-dark"
           width="100%"
