@@ -31,6 +31,7 @@ const dispatch = (state, action) => {
       if (state.date >= state.maxDate) {
         state.play = true;
         state.date = new Date(state.minDate);
+        state.update = true;
         state.interval = action.value;
       } else {
         state.play = true;
