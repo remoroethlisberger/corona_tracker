@@ -1,6 +1,6 @@
 import React from 'react';
 import * as serviceWorker from './serviceWorker';
-import ReactDOM from 'react-dom';
+import { render, hydrate } from 'react-dom';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import CoronaTracker from './pages/CoronaTracker';
 
@@ -28,19 +28,27 @@ i18n
     },
   });
 
-ReactDOM.render(
-  <React.StrictMode>
-    <HashRouter>
-      <Switch>
-        <Route key="contact" path="/contact" component={Contact} />
-        <Route key="faq" path="/faq" component={FAQ} />
-        <Route key="main" component={CoronaTracker} />
-      </Switch>
-    </HashRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const root = document.getElementById('root');
 
+const App = (props) => {
+  return (
+    <React.StrictMode>
+      <HashRouter>
+        <Switch>
+          <Route key="contact" path="/contact" component={Contact} />
+          <Route key="faq" path="/faq" component={FAQ} />
+          <Route key="main" component={CoronaTracker} />
+        </Switch>
+      </HashRouter>
+    </React.StrictMode>
+  );
+};
+
+if (root.hasChildNodes()) {
+  hydrate(<App />, root);
+} else {
+  render(<App />, root);
+}
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

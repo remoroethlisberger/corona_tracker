@@ -22,10 +22,12 @@
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-snap": "^1.23.0",
     "topojson-client": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "postbuild": "react-snap",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
