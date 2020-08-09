@@ -8,9 +8,11 @@ const Tooltip = (props) => {
   if (!props.place) {
     return <></>;
   } else {
+    return <></>;
     return (
       <div id="tooltip" style={{ top: props.top, left: props.left }}>
         <span className="font-weight-bold">{props.place}</span>
+        <div onClick={props.clear}>X</div>
         <div>
           {props.cases.length ? (
             <table className="table table-striped small">

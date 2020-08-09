@@ -15,6 +15,7 @@ import {
   selectAll,
 } from 'd3';
 import { useTranslation } from 'react-i18next';
+import Sidebar from './Sidebar';
 
 ReactGA.initialize('UA-174993755-1');
 
@@ -64,6 +65,7 @@ const Map = (props) => {
       show: true,
       left: event.pageX + 10,
       top: event.pageY + 10 - window.scrollY,
+      clear: () => setTooltip({}),
     });
   };
 
@@ -108,16 +110,66 @@ const Map = (props) => {
             // projection(scale())
             .style('transform', 'translate(-220px, -10px)')
             .attr('fill', colorScale(sum))
-            .on('click', (d) => {
-              //beginHover(d.id, d.properties.name)
-            })
             .on('mouseenter', (d) => {
-              select(this).raise().style('stroke', 'white');
-              beginHover(d.id, d.properties.name);
+              //select(this).raise().style('stroke', 'white');
+              //beginHover(d.id, d.properties.name);
+            })
+            .on('click', (d) => {
+              if (tooltip.id && tooltip.id == d.id) {
+                selectAll('path').style('stroke', 'black');
+                setTooltip({});
+              } else {
+                selectAll('path').style('stroke', 'black');
+                select(this).raise().style('stroke', 'white');
+                let name = d.properties.name;
+                let id = d.id;
+                const cases = mapState.data.filter((d) => {
+                  return d.id == id;
+                });
+
+                let sum = 0;
+                let recent_cases = [];
+                for (let k = 0; k < cases.length; k++) {
+                  let delta =
+                    (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / 10;
+                  if (delta <= 1 && delta >= 0) {
+                    sum += cases[k].cases;
+                    recent_cases.push({
+                      date: cases[k].date,
+                      cases: cases[k].cases,
+                    });
+                  }
+                }
+
+                recent_cases.sort((x, y) => {
+                  if (x.date < y.date) {
+                    return 1;
+                  } else {
+                    return -1;
+                  }
+                });
+
+                ReactGA.event({
+                  category: 'Corona Map',
+                  action: 'Clicked on ' + name,
+                });
+
+                setTooltip({
+                  place: name,
+                  cases: recent_cases,
+                  sum: sum,
+                  id: id,
+                  last: tooltip.id,
+                  show: true,
+                  left: event.pageX + 10,
+                  top: event.pageY + 10 - window.scrollY,
+                  clear: () => setTooltip({}),
+                });
+              }
             })
             .on('mouseleave', (d) => {
-              select(this).transition().style('stroke', 'black');
-              setTooltip(undefined);
+              //select(this).transition().style('stroke', 'black');
+              //setTooltip(undefined);
             })
             .attr('id', d.id);
         });
@@ -150,11 +202,52 @@ const Map = (props) => {
           select(this)
             .attr('fill', colorScale(sum))
             .on('mouseenter', (d) => {
-              select(this).raise().style('stroke', 'white');
-              beginHover(d.id, d.properties.name);
+              //select(this).raise().style('stroke', 'white');
+              //beginHover(d.id, d.properties.name);
             });
         }
       });
+
+      if (tooltip.id) {
+        let name = tooltip.place;
+        let id = tooltip.id;
+        const cases = mapState.data.filter((d) => {
+          return d.id == id;
+        });
+
+        let sum = 0;
+        let recent_cases = [];
+        for (let k = 0; k < cases.length; k++) {
+          let delta =
+            (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / 10;
+          if (delta <= 1 && delta >= 0) {
+            sum += cases[k].cases;
+            recent_cases.push({
+              date: cases[k].date,
+              cases: cases[k].cases,
+            });
+          }
+        }
+
+        recent_cases.sort((x, y) => {
+          if (x.date < y.date) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+
+        setTooltip({
+          place: name,
+          cases: recent_cases,
+          sum: sum,
+          id: id,
+          last: tooltip.id,
+          show: true,
+          clear: () => setTooltip({}),
+        });
+      }
+
       dispatch({ type: 'rerendered' });
     }
   }, [mapState.update]);
@@ -171,6 +264,19 @@ const Map = (props) => {
     }
   }, [mapState.play]);
 
+  useEffect(() => {
+    if (tooltip.id) {
+      selectAll('path').style('stroke', 'black');
+      selectAll('path').each((d) => {
+        if (d) {
+          if (d.id == tooltip.id) {
+            select(this).style('stroke', 'white');
+          }
+        }
+      });
+    }
+  }, [tooltip.name]);
+
   return (
     <>
       <div className="text-center">
@@ -180,20 +286,26 @@ const Map = (props) => {
         </h4>
       </div>
       <div
-        className="mx-auto map-container text-center"
+        className="mx-auto d-flex flex-row justify-content-center map-container text-center"
         style={{
           height: '500px',
           overflow: 'hidden',
-          maxWidth: '600px',
+          maxWidth: '1200px',
         }}
       >
         <Tooltip {...tooltip} />
-        <svg
-          className="map border border-dark"
-          width="100%"
-          height="500px"
-          ref={(node) => setNode(node)}
-        ></svg>
+        <div style={{ width: '600px' }}>
+          <svg
+            className="map border border-dark"
+            width="100%"
+            height="500px"
+            ref={(node) => setNode(node)}
+          ></svg>
+        </div>
+        <Sidebar
+          show={Object.keys(tooltip).length ? true : false}
+          {...tooltip}
+        />
       </div>
     </>
   );

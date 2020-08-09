@@ -9,6 +9,7 @@
       "contact": "Contact",
       "cases": "Cases",
       "data": "Data",
+      "close": "Close",
       "idea-and-realisation": "Idea and realization",
       "technology": "Technology",
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
@@ -24,6 +25,7 @@
       "contact": "Kontakt",
       "cases": "Fälle",
       "data": "Daten",
+      "close": "Schliessen",
       "idea-and-realisation": "Idee und Realisation",
       "technology": "Technologie",
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
