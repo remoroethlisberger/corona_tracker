@@ -28,5 +28,20 @@
       "technology": "Technologie",
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
     }
+  },
+  "fr": {
+    "translation": {
+      "play": "Lire",
+      "pause": "Pause",
+      "date": "Date",
+      "update": "À partir de",
+      "source": "Source",
+      "contact": "Contact",
+      "cases": "Cas",
+      "data": "Date",
+      "idea-and-realisation": "Idée et réalisation",
+      "technology": "Technologie",
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
+    }
   }
 }
