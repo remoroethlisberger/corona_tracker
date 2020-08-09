@@ -5,8 +5,8 @@ export const randomContaigous = () => {
 export const randomOffset = (axis) => {
   switch (axis) {
     case 'x':
-      return window.innerWidth * Math.random();
+      return document.documentElement.scrollWidth * Math.random();
     case 'y':
-      return window.innerHeight * Math.random();
+      return document.documentElement.scrollHeight * Math.random();
   }
 };

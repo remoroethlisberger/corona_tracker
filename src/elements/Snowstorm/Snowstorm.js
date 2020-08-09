@@ -60,7 +60,7 @@ const Snowstorm = (props) => {
     const interval = setInterval(() => {
       let data_ = data;
       let step_ = step;
-      if (data.length <= 800) {
+      if (data.length <= 600) {
         let newdata = enterNewData(data_, step_);
         console.log(newdata);
         setStep(step_ + 1);
