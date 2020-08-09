@@ -7,9 +7,8 @@ import Navbar from '../Navbar/Navbar';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-174993755-1');
 
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 const PageWrapper = (props) => {
+  ReactGA.pageview(window.location.pathname + window.location.hash);
   return (
     <div className="container p-0">
       <Navbar {...props} />
