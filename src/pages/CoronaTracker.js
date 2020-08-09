@@ -5,12 +5,31 @@ import Controls from '../elements/Map/Controls';
 import Map from '../elements/Map/Map';
 import Footer from '../elements/Map/Footer';
 import { isMobile } from 'mobile-device-detect';
+import { useState } from 'react';
+
+import Snowstorm from '../elements/Snowstorm/Snowstorm';
 
 const CoronaTracker = (props) => {
+  const [spreadIt, setSpreadIt] = useState(false);
+
   return (
     <PageWrapper {...props}>
+      {spreadIt ? <Snowstorm /> : ''}
       <MapProvider>
-        <h2 className="text-center">COVID-19 Tracker {isMobile ? '🦠' : ''}</h2>
+        <h2 className="text-center">
+          COVID-19 Tracker{' '}
+          {isMobile ? (
+            <span
+              onClick={() => {
+                setSpreadIt(true);
+              }}
+            >
+              🦠
+            </span>
+          ) : (
+            ''
+          )}
+        </h2>
         <Map />
         <Controls />
         <Footer />
