@@ -38,7 +38,8 @@ def main():
         for i, td in enumerate(tr.find_all("td")):
             if i == 0:
                 date = td.text
-                date = date.split("\n")[0]
+                # remove any whitespace
+                date = date.split("\n")[0].strip()
                 date = datetime.strptime(date, "%d.%m.%y")
             if i == 2:
                 places = td.text

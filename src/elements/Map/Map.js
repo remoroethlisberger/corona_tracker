@@ -7,7 +7,6 @@ import ReactGA from 'react-ga';
 import {
   select,
   zoom,
-  map,
   geoPath,
   event,
   interpolateRgb,
@@ -25,8 +24,8 @@ const Map = (props) => {
   const [tooltip, setTooltip] = useState({});
   const { i18n } = useTranslation();
   const colorScale = scaleLinear()
-    .domain([0, 15])
-    .range(['#5D3A9B', '#E66100'])
+    .domain([0, 2, 5, 20])
+    .range(['#fef0d9', '#fdcc8a', '#fc8d59', '#d7301f'])
     .interpolate(interpolateRgb);
 
   const beginHover = (id, name) => {

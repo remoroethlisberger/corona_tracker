@@ -20,6 +20,10 @@ def create_data():
 
     if(df.shape[0] != merged.shape[0]):
         print("Not all data moved over")
+        print("find more details below:\n")
+        t = df.merge(ids, left_on='place', right_on='name',
+                     how='left', indicator=True)
+        print(t[t['_merge'] == 'left_only'])
         print(merged.shape[0])
 
 
