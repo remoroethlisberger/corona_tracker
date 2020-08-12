@@ -11,7 +11,8 @@
       "data": "Data",
       "idea-and-realisation": "Idea and realization",
       "technology": "Technology",
-      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js",
+      "share_message": "Hey, check out this website that I found!"
     }
   },
   "de": {
@@ -26,7 +27,8 @@
       "data": "Daten",
       "idea-and-realisation": "Idee und Realisation",
       "technology": "Technologie",
-      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js",
+      "share_message": "Hey, Schau dir einmal die Webseite an, die ich soeben gefunden habe"
     }
   },
   "fr": {

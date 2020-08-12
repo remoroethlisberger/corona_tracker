@@ -24,13 +24,33 @@ const Controls = (props) => {
       >
         <FontAwesomeIcon icon={faStepBackward} />
       </button>
-      <button
-        className="btn btn-primary"
-        onClick={() => dispatch({ type: mapState.play ? 'pause' : 'play' })}
-      >
-        <FontAwesomeIcon icon={mapState.play ? faPause : faPlay} />{' '}
-        {mapState.play ? t('pause') : t('play')}
-      </button>
+      <div>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={() => dispatch({ type: mapState.play ? 'pause' : 'play' })}
+        >
+          <FontAwesomeIcon icon={mapState.play ? faPause : faPlay} />{' '}
+          {mapState.play ? t('pause') : t('play')}
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={() => dispatch({ type: 'speed', value: 1000 })}
+        >
+          1x
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={() => dispatch({ type: 'speed', value: 500 })}
+        >
+          2x
+        </button>
+        <button
+          className="btn btn-primary mx-2"
+          onClick={() => dispatch({ type: 'speed', value: 200 })}
+        >
+          5x
+        </button>
+      </div>
       <button
         className="btn btn-primary"
         onClick={() => dispatch({ type: 'next' })}

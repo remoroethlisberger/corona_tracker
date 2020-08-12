@@ -21,7 +21,7 @@
     "react-ga": "^3.1.2",
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "topojson-client": "^3.1.0"
   },
   "scripts": {

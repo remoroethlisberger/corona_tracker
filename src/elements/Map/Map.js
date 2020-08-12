@@ -160,15 +160,14 @@ const Map = (props) => {
 
   useEffect(() => {
     if (mapState.play) {
-      let interval = setInterval(
-        () => dispatch({ type: 'next' }),
-        mapState.intervalTime
-      );
+      let time = mapState.intervalTime;
+      clearInterval(mapState.interval);
+      let interval = setInterval(() => dispatch({ type: 'next' }), time);
       dispatch({ type: 'play', value: interval });
     } else {
       clearInterval(mapState.interval);
     }
-  }, [mapState.play]);
+  }, [mapState.play, mapState.intervalTime]);
 
   return (
     <>

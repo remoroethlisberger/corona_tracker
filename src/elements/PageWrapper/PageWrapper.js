@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 import ReactGA from 'react-ga';
 import { useTranslation } from 'react-i18next';
+import SocialMediaBar from '../SocialMediaBar/SocialMediaBar';
 ReactGA.initialize('UA-174993755-1');
 
 const PageWrapper = (props) => {
@@ -14,7 +15,12 @@ const PageWrapper = (props) => {
   return (
     <div className="container p-0">
       <Navbar {...props} />
-      <div className="main p-2">{props.children}</div>
+      <div className="main">
+        <>{props.children}</>
+        <>
+          <SocialMediaBar />
+        </>
+      </div>
       <footer>
         <div className="d-flex flex-row justify-content-around">
           <div className="small">

@@ -27,6 +27,9 @@ const dispatch = (state, action) => {
         state.update = true;
       }
       break;
+    case 'speed':
+      state.intervalTime = action.value;
+      break;
     case 'play':
       if (state.date >= state.maxDate) {
         state.play = true;

@@ -7,7 +7,7 @@ const Footer = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="py-5 d-flex flex-row justify-content-around">
+    <div className="py-3 d-flex flex-row justify-content-around">
       <div>
         {t('update') +
           ': ' +
