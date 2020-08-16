@@ -11,6 +11,11 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translations from './assets/translations/translations.json';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import PrivateRoute from './helpers/PrivateRoute';
+import Dashboard from './pages/Dashboard';
+import Logout from './pages/Logout';
 
 i18n
   .use(Backend)
@@ -32,6 +37,10 @@ ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <Switch>
+        <Route key="login" path="/login" component={Login} />
+        <Route key="logout" path="/logout" component={Logout} />
+        <PrivateRoute key="dashboard" path="/dashboard" component={Dashboard} />
+        <Route key="register" path="/register" component={Register} />
         <Route key="contact" path="/contact" component={Contact} />
         <Route key="faq" path="/faq" component={FAQ} />
         <Route key="main" component={CoronaTracker} />

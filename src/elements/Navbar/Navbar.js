@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import auth from '../../helpers/auth';
 
 const Navbar = (props) => {
   const {
@@ -49,6 +50,14 @@ const Navbar = (props) => {
           <li className={pathname == '/faq' ? 'nav-item active' : 'nav-item'}>
             <Link className="nav-link" to={'/faq'}>
               FAQ
+            </Link>
+          </li>
+          <li className={pathname == '/login' ? 'nav-item active' : 'nav-item'}>
+            <Link
+              className="nav-link"
+              to={auth.isValid() ? '/logout' : '/login'}
+            >
+              {auth.isValid() ? t('Logout') : t('Login')}
             </Link>
           </li>
         </ul>

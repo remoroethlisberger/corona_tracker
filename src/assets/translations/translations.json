@@ -12,7 +12,18 @@
       "idea-and-realisation": "Idea and realization",
       "technology": "Technology",
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js",
-      "share_message": "Hey, check out this website that I found!"
+      "share_message": "Hey, check out this website that I found!",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "email",
+      "password": "Password",
+      "password repeat": "Repeat password",
+      "register": "Register",
+      "register_now": "Register now and get notifications, when there are COVID-19 cases near you. Watch only communities and municipalities you are interested in.",
+      "profile": "Profile",
+      "update-btn": "Update",
+      "select": "Select municipality...",
+      "changes_saved": "Changes saved"
     }
   },
   "de": {
@@ -28,7 +39,18 @@
       "idea-and-realisation": "Idee und Realisation",
       "technology": "Technologie",
       "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js",
-      "share_message": "Hey, Schau dir einmal die Webseite an, die ich soeben gefunden habe"
+      "share_message": "Hey, Schau dir einmal die Webseite an, die ich soeben gefunden habe",
+      "firstname": "Vorname",
+      "lastname": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "password repeat": "Passwort wiederholen",
+      "register": "Registrieren",
+      "register_now": "Registriere dich jetzt und erhalte eine E-Mail Benachrichtigung im Falle eines Corona Virus Ausbruchs in deiner Wohngemeinde.",
+      "profile": "Profil",
+      "update-btn": "Aktualisieren",
+      "select": "Gemeinde auswählen...",
+      "changes_saved": "Änderungen gespeichert"
     }
   },
   "fr": {
@@ -43,7 +65,12 @@
       "data": "Date",
       "idea-and-realisation": "Idée et réalisation",
       "technology": "Technologie",
-      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js"
+      "techexplain": "The data from the canton of Bern gets parsed using python into a CSV file, which serves as data source for this application.\nThe frontend is react in combination with D3.js",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "email": "email",
+      "password": "Password",
+      "register": "Register"
     }
   }
 }

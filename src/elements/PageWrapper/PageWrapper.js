@@ -15,11 +15,15 @@ const PageWrapper = (props) => {
   return (
     <div className="container p-0">
       <Navbar {...props} />
-      <div className="main">
-        <>{props.children}</>
-        <>
-          <SocialMediaBar />
-        </>
+      <div className="main mt-2">
+        <div className="py-2">{props.children}</div>
+        {props.disableSocial ? (
+          <></>
+        ) : (
+          <>
+            <SocialMediaBar />
+          </>
+        )}
       </div>
       <footer>
         <div className="d-flex flex-row justify-content-around">

@@ -33,6 +33,7 @@ const Controls = (props) => {
           {mapState.play ? t('pause') : t('play')}
         </button>
         <button
+          disabled={mapState.intervalTime === 1000}
           className="btn btn-primary mx-2"
           onClick={() => dispatch({ type: 'speed', value: 1000 })}
         >
@@ -40,12 +41,14 @@ const Controls = (props) => {
         </button>
         <button
           className="btn btn-primary mx-2"
+          disabled={mapState.intervalTime === 500}
           onClick={() => dispatch({ type: 'speed', value: 500 })}
         >
           2x
         </button>
         <button
           className="btn btn-primary mx-2"
+          disabled={mapState.intervalTime === 200}
           onClick={() => dispatch({ type: 'speed', value: 200 })}
         >
           5x
