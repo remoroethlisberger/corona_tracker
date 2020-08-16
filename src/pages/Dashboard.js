@@ -25,7 +25,7 @@ const Dashboard = (props) => {
     <PageWrapper {...props}>
       <div className="container">
         <div className="row">
-          <div className="col-6 offset-3">
+          <div className="col-md-6 offset-md-3">
             <h4>{t('profile')}</h4>
             <div className="bg-light py-2">
               <>

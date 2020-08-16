@@ -43,7 +43,7 @@ const Login = (props) => {
       <PageWrapper {...props}>
         <div>
           <div className="row">
-            <div className="col-6 offset-3 text-center">
+            <div className="col-md-6 offset-md-3 text-center">
               <h4>Login</h4>
               <form onSubmit={login}>
                 <div className="form-group">

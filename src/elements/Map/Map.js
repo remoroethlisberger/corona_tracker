@@ -82,7 +82,8 @@ const Map = (props) => {
       countries
         .enter()
         .append('path')
-        .attr('stroke', 'black')
+        .attr('stroke', '#A9A9A9')
+        .attr('stroke-width', '0.5')
         .each(function (d, i) {
           let sum = 0;
           let casesById = mapState.casesById.filter((c) => {
@@ -111,11 +112,11 @@ const Map = (props) => {
               //beginHover(d.id, d.properties.name)
             })
             .on('mouseenter', (d) => {
-              select(this).raise().style('stroke', 'white');
+              select(this).raise().style('stroke', 'black');
               beginHover(d.id, d.properties.name);
             })
             .on('mouseleave', (d) => {
-              select(this).transition().style('stroke', 'black');
+              select(this).transition().style('stroke', '#A9A9A9');
               setTooltip(undefined);
             })
             .attr('id', d.id);
@@ -149,7 +150,7 @@ const Map = (props) => {
           select(this)
             .attr('fill', colorScale(sum))
             .on('mouseenter', (d) => {
-              select(this).raise().style('stroke', 'white');
+              select(this).raise().style('stroke', 'black');
               beginHover(d.id, d.properties.name);
             });
         }

@@ -2,6 +2,7 @@ import React from 'react';
 import * as serviceWorker from './serviceWorker';
 import ReactDOM from 'react-dom';
 import { HashRouter, Switch, Route } from 'react-router-dom';
+import HttpsRedirect from 'react-https-redirect';
 import CoronaTracker from './pages/CoronaTracker';
 
 import i18n from 'i18next';
@@ -32,20 +33,25 @@ i18n
       escapeValue: false,
     },
   });
-
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      <Switch>
-        <Route key="login" path="/login" component={Login} />
-        <Route key="logout" path="/logout" component={Logout} />
-        <PrivateRoute key="dashboard" path="/dashboard" component={Dashboard} />
-        <Route key="register" path="/register" component={Register} />
-        <Route key="contact" path="/contact" component={Contact} />
-        <Route key="faq" path="/faq" component={FAQ} />
-        <Route key="main" component={CoronaTracker} />
-      </Switch>
-    </HashRouter>
+    <HttpsRedirect>
+      <HashRouter>
+        <Switch>
+          <Route key="login" path="/login" component={Login} />
+          <Route key="logout" path="/logout" component={Logout} />
+          <PrivateRoute
+            key="dashboard"
+            path="/dashboard"
+            component={Dashboard}
+          />
+          <Route key="register" path="/register" component={Register} />
+          <Route key="contact" path="/contact" component={Contact} />
+          <Route key="faq" path="/faq" component={FAQ} />
+          <Route key="main" component={CoronaTracker} />
+        </Switch>
+      </HashRouter>
+    </HttpsRedirect>
   </React.StrictMode>,
   document.getElementById('root')
 );
