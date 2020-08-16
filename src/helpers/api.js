@@ -1,7 +1,7 @@
 import axios from 'axios';
 import auth from './auth';
 
-const baseurl = 'http://api.corona.waremama.ch/';
+const baseurl = 'https://api.corona.waremama.ch/';
 
 const callAPI = async (path, data, params) => {
   let r = {};
