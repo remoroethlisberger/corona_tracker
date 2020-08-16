@@ -46,6 +46,7 @@ def main():
                 for place in places.split("\n"):
                     if("Daten" not in place):
                         try:
+                            place = place.strip()
                             match = re.search(
                                 "(?P<Cases>[0-9]+) (?P<Place>.+)", place)
                             cases = int(match.group('Cases'))
