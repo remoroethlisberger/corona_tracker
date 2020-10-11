@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMapContext } from '../../hooks/useMapContext';
 import Tooltip from './Tooltip';
+import population from '../../assets/data/population.json';
 
 import ReactGA from 'react-ga';
 
@@ -29,6 +30,15 @@ const Map = (props) => {
     .interpolate(interpolateRgb);
 
   const beginHover = (id, name) => {
+    let pop = population.filter((place) => {
+      return place.id == id;
+    });
+    let _population;
+    if (pop.length > 0) {
+      _population = pop[0].einwohner;
+    } else {
+      _population = 'Unknown';
+    }
     const cases = mapState.data.filter((d) => {
       return d.id == id;
     });
@@ -36,8 +46,9 @@ const Map = (props) => {
     let sum = 0;
     let recent_cases = [];
     for (let k = 0; k < cases.length; k++) {
-      let delta = (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / 10;
-      if (delta <= 1 && delta >= 0) {
+      let delta =
+        (mapState.date - cases[k].date) / 1000 / 60 / 60 / 24 / mapState.n;
+      if (delta < 1 && delta >= 0) {
         sum += cases[k].cases;
         recent_cases.push({ date: cases[k].date, cases: cases[k].cases });
       }
@@ -60,6 +71,7 @@ const Map = (props) => {
       place: name,
       cases: recent_cases,
       sum: sum,
+      population: _population,
       show: true,
       left: event.pageX + 10,
       top: event.pageY + 10 - window.scrollY,
@@ -97,8 +109,8 @@ const Map = (props) => {
               60 /
               60 /
               24 /
-              10;
-            if (delta <= 1 && delta >= 0) {
+              mapState.n;
+            if (delta < 1 && delta >= 0) {
               sum += casesById.cases[k].cases;
             }
           }
@@ -142,8 +154,8 @@ const Map = (props) => {
               60 /
               60 /
               24 /
-              10;
-            if (delta <= 1 && delta >= 0) {
+              mapState.n;
+            if (delta < 1 && delta >= 0) {
               sum += casesById.cases[k].cases;
             }
           }
@@ -178,6 +190,7 @@ const Map = (props) => {
           {mapState.date.toLocaleDateString(i18n.language)}
         </h4>
       </div>
+      {props.children}
       <div
         className="mx-auto map-container text-center"
         style={{

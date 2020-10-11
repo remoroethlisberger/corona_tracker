@@ -40,6 +40,8 @@ def main():
                 date = td.text
                 # remove any whitespace
                 date = date.split("\n")[0].strip()
+                if(len(date) > 8):
+                    date = date[0:-2]
                 date = datetime.strptime(date, "%d.%m.%y")
             if i == 2:
                 places = td.text

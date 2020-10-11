@@ -9,6 +9,7 @@ const map = require('../../assets/data/be-municipalties-geo.json');
 const MapContext = createContext();
 
 const dispatch = (state, action) => {
+  debugger;
   switch (action.type) {
     case 'next':
       if (state.date < state.maxDate) {
@@ -44,6 +45,10 @@ const dispatch = (state, action) => {
     case 'pause':
       state.play = false;
       break;
+    case 'changeN':
+      state.update = true;
+      state.n = parseInt(action.value);
+      break;
   }
   return;
 };
@@ -54,10 +59,11 @@ let initialState = {
   casesById: getCasesById(map, data),
   minDate: new Date(getMinDate(data)),
   maxDate: new Date(getMaxDate(data)),
-  date: getMaxDate(data),
+  date: new Date(getMaxDate(data)),
   days: 10,
   intervalTime: 1000,
   play: false,
+  n: 10,
 };
 
 const MapProvider = (props) => {

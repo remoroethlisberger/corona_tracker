@@ -10,7 +10,7 @@ import SocialMediaBar from '../SocialMediaBar/SocialMediaBar';
 ReactGA.initialize('UA-174993755-1');
 
 const PageWrapper = (props) => {
-  ReactGA.pageview(window.location.pathname + window.location.hash);
+  //ReactGA.pageview(window.location.pathname + window.location.hash);
   const { t, i18n } = useTranslation();
   return (
     <div className="container p-0">
@@ -20,10 +20,10 @@ const PageWrapper = (props) => {
         {props.disableSocial ? (
           <></>
         ) : (
-          <>
-            <SocialMediaBar />
-          </>
-        )}
+            <>
+              <SocialMediaBar />
+            </>
+          )}
       </div>
       <footer>
         <div className="d-flex flex-row justify-content-around">

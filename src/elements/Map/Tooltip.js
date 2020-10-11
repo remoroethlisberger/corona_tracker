@@ -10,7 +10,9 @@ const Tooltip = (props) => {
   } else {
     return (
       <div id="tooltip" style={{ top: props.top, left: props.left }}>
-        <span className="font-weight-bold">{props.place}</span>
+        <span className="font-weight-bold">
+          {props.place} ({((props.sum / props.population) * 100).toFixed(2)}%)
+        </span>
         <div>
           {props.cases.length ? (
             <table className="table table-striped small">

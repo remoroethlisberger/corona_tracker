@@ -12,6 +12,14 @@ def create_data():
     ids = pd.read_json(path+'../src/assets/data/names_ids.json',
                        dtype=[{'name': str, 'id': int}])
     df = pd.read_csv(path+'cases.csv')
+
+    casesbyday = df.groupby(['date']).sum()
+    casesbyday = casesbyday.reset_index()
+    casesbyday = casesbyday.rename(
+        columns={"date": "primary", "cases": "secondary"})
+    casesbyday.to_json(
+        path + '../src/assets/data/dailycases.json', orient='records')
+
     ids.name = ids.name.astype(str)
     df.place = df.place.astype(str)
     merged = df.merge(ids, left_on='place', right_on='name')

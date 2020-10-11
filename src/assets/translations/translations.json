@@ -5,6 +5,8 @@
       "pause": "Pause",
       "date": "Date",
       "update": "Updated",
+      "last_10_days": "Cases over the last 10 days",
+      "today": "Number of new cases",
       "source": "Source",
       "contact": "Contact",
       "cases": "Cases",
@@ -23,7 +25,10 @@
       "profile": "Profile",
       "update-btn": "Update",
       "select": "Select municipality...",
-      "changes_saved": "Changes saved"
+      "changes_saved": "Changes saved",
+      "over_the_last": "Over the last",
+      "over_the_last_1": "Over the last day",
+      "days": "days"
     }
   },
   "de": {
@@ -32,6 +37,8 @@
       "pause": "Pause",
       "date": "Datum",
       "update": "Letzte Aktualisierung",
+      "last_10_days": "Anzahl Fälle in den letzten 10 Tagen",
+      "today": "Anzahl neue Fälle",
       "source": "Quelle",
       "contact": "Kontakt",
       "cases": "Fälle",
@@ -50,7 +57,10 @@
       "profile": "Profil",
       "update-btn": "Aktualisieren",
       "select": "Gemeinde auswählen...",
-      "changes_saved": "Änderungen gespeichert"
+      "changes_saved": "Änderungen gespeichert",
+      "over_the_last": "Während den letzten",
+      "over_the_last_1": "Während einem Tag",
+      "days": "Tagen"
     }
   },
   "fr": {
@@ -59,6 +69,8 @@
       "pause": "Pause",
       "date": "Date",
       "update": "À partir de",
+      "last_10_days": "Nombre de cas dans les derniers 10 jours",
+      "today": "Nombre de noveaux cas",
       "source": "Source",
       "contact": "Contact",
       "cases": "Cas",
@@ -70,7 +82,10 @@
       "lastname": "Lastname",
       "email": "email",
       "password": "Password",
-      "register": "Register"
+      "register": "Register",
+      "over_the_last": "Dans les derniers",
+      "over_the_last_1": "Dans un jour",
+      "days": "jours"
     }
   }
 }

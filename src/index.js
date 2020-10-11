@@ -17,6 +17,8 @@ import Register from './pages/Register';
 import PrivateRoute from './helpers/PrivateRoute';
 import Dashboard from './pages/Dashboard';
 import Logout from './pages/Logout';
+import Analytics from './pages/Analytics';
+
 
 i18n
   .use(Backend)
@@ -48,6 +50,7 @@ ReactDOM.render(
           <Route key="register" path="/register" component={Register} />
           <Route key="contact" path="/contact" component={Contact} />
           <Route key="faq" path="/faq" component={FAQ} />
+          <Route key="analytics" path="/analytics" component={Analytics} />
           <Route key="main" component={CoronaTracker} />
         </Switch>
       </HashRouter>
