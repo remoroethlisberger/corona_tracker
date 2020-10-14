@@ -5,6 +5,7 @@ from datetime import datetime
 import pandas as pd
 import numpy as np
 from create_data import create_data
+from main2 import main2
 import subprocess
 import os
 
@@ -35,6 +36,7 @@ def main():
     for tr in tbody.find_all("tr"):
         date = None
         list_of_cases = []
+        cases = 0
         for i, td in enumerate(tr.find_all("td")):
             if i == 0:
                 date = td.text
@@ -43,6 +45,13 @@ def main():
                 if(len(date) > 8):
                     date = date[0:-2]
                 date = datetime.strptime(date, "%d.%m.%y")
+            if i == 1:
+                newcases = td.text.split('\n')[1]
+                newcases = newcases.rstrip("\n")
+                newcases = newcases.strip()
+                match = re.search(
+                    "\(\+(?P<Number>[0-9]+)\)", newcases)
+                cases = int(match.group('Number'))
             if i == 2:
                 places = td.text
                 for place in places.split("\n"):
@@ -66,9 +75,13 @@ def main():
         else:
             if max_date < date:
                 print("Found new data...")
-                new_data_found = True
-                print(pd.DataFrame(list_of_cases))
-                df = df.append(list_of_cases, ignore_index=True)
+                if(len(list_of_cases)):
+                    new_data_found = True
+                    print(pd.DataFrame(list_of_cases))
+                    df = df.append(list_of_cases, ignore_index=True)
+                else:
+                    df = df.append(
+                        {'place': 'Kanton Bern', 'cases': cases, 'date': date}, ignore_index=True)
 
     df = df.sort_values(by='date', ascending=False)
     df.to_csv(path + 'cases.csv', index=False, encoding='utf8')
@@ -77,7 +90,7 @@ def main():
 
 if __name__ == "__main__":
     needs_recreation = main()
-
+    main2()
     if needs_recreation:
         print("Deployment triggered")
         create_data()

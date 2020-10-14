@@ -21,8 +21,8 @@ const Controls = (props) => {
 
   useEffect(() => {
     const playOnEnter = (e) => {
-      e.preventDefault();
       if (e.keyCode == 32) {
+        e.preventDefault();
         dispatch({ type: mapState.play ? 'pause' : 'play' })
       }
     }

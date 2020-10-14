@@ -1,417 +1,1670 @@
 [
-  { "name": "Aarberg", "id": 301 },
-  { "name": "Bargen (BE)", "id": 302 },
-  { "name": "Bargen", "id": 302 },
-  { "name": "Grossaffoltern", "id": 303 },
-  { "name": "Kallnach", "id": 304 },
-  { "name": "Kappelen", "id": 305 },
-  { "name": "Lyss", "id": 306 },
-  { "name": "Meikirch", "id": 307 },
-  { "name": "Radelfingen", "id": 309 },
-  { "name": "Rapperswil (BE)", "id": 310 },
-  { "name": "Schüpfen", "id": 311 },
-  { "name": "Seedorf (BE)", "id": 312 },
-  { "name": "Seedorf", "id": 312 },
-  { "name": "Aarwangen", "id": 321 },
-  { "name": "Auswil", "id": 322 },
-  { "name": "Bannwil", "id": 323 },
-  { "name": "Bleienbach", "id": 324 },
-  { "name": "Busswil bei Melchnau", "id": 325 },
-  { "name": "Gondiswil", "id": 326 },
-  { "name": "Langenthal", "id": 329 },
-  { "name": "Lotzwil", "id": 331 },
-  { "name": "Madiswil", "id": 332 },
-  { "name": "Melchnau", "id": 333 },
-  { "name": "Obersteckholz", "id": 334 },
-  { "name": "Oeschenbach", "id": 335 },
-  { "name": "Reisiswil", "id": 336 },
-  { "name": "Roggwil (BE)", "id": 337 },
-  { "name": "Roggwil", "id": 337 },
-  { "name": "Rohrbach", "id": 338 },
-  { "name": "Rohrbachgraben", "id": 339 },
-  { "name": "Rütschelen", "id": 340 },
-  { "name": "Schwarzhäusern", "id": 341 },
-  { "name": "Thunstetten", "id": 342 },
-  { "name": "Ursenbach", "id": 344 },
-  { "name": "Wynau", "id": 345 },
-  { "name": "Bern", "id": 351 },
-  { "name": "Bolligen", "id": 352 },
-  { "name": "Bremgarten bei Bern", "id": 353 },
-  { "name": "Bremgarten b. Bern", "id": 353 },
-  { "name": "Kirchlindach", "id": 354 },
-  { "name": "Köniz", "id": 355 },
-  { "name": "Wabern", "id": 355 },
-  { "name": "Muri bei Bern", "id": 356 },
-  { "name": "Muri", "id": 356 },
-  { "name": "Gümligen", "id": 356 },
-  { "name": "Oberbalm", "id": 357 },
-  { "name": "Stettlen", "id": 358 },
-  { "name": "Vechigen", "id": 359 },
-  { "name": "Wohlen bei Bern", "id": 360 },
-  { "name": "Wohlen", "id": 360 },
-  { "name": "Zollikofen", "id": 361 },
-  { "name": "Ittigen", "id": 362 },
-  { "name": "Worblaufen", "id": 362 },
-  { "name": "Ostermundigen", "id": 363 },
-  { "name": "Biel", "id": 371 },
-  { "name": "Biel/Bienne", "id": 371 },
-  { "name": "Bienne", "id": 371 },
-  { "name": "Evilard", "id": 372 },
-  { "name": "Leubringen", "id": 372 },
-  { "name": "Arch", "id": 381 },
-  { "name": "Büetigen", "id": 382 },
-  { "name": "Büren an der Aare", "id": 383 },
-  { "name": "Büren a.A.", "id": 383 },
-  { "name": "Diessbach bei Büren", "id": 385 },
-  { "name": "Diessbach b. Büren", "id": 385 },
-  { "name": "Dotzigen", "id": 386 },
-  { "name": "Lengnau (BE)", "id": 387 },
-  { "name": "Lengnau", "id": 387 },
-  { "name": "Leuzigen", "id": 388 },
-  { "name": "Meienried", "id": 389 },
-  { "name": "Meinisberg", "id": 390 },
-  { "name": "Oberwil bei Büren", "id": 391 },
-  { "name": "Pieterlen", "id": 392 },
-  { "name": "Rüti bei Büren", "id": 393 },
-  { "name": "Wengi", "id": 394 },
-  { "name": "Aefligen", "id": 401 },
-  { "name": "Alchenstorf", "id": 402 },
-  { "name": "Bäriswil", "id": 403 },
-  { "name": "Burgdorf", "id": 404 },
-  { "name": "Ersigen", "id": 405 },
-  { "name": "Ersingen", "id": 405 },
-  { "name": "Hasle bei Burgdorf", "id": 406 },
-  { "name": "Heimiswil", "id": 407 },
-  { "name": "Hellsau", "id": 408 },
-  { "name": "Hindelbank", "id": 409 },
-  { "name": "Höchstetten", "id": 410 },
-  { "name": "Kernenried", "id": 411 },
-  { "name": "Kirchberg (BE)", "id": 412 },
-  { "name": "Kirchberg", "id": 412 },
-  { "name": "Koppigen", "id": 413 },
-  { "name": "Krauchthal", "id": 414 },
-  { "name": "Lyssach", "id": 415 },
-  { "name": "Mötschwil", "id": 416 },
-  { "name": "Niederösch", "id": 417 },
-  { "name": "Oberburg", "id": 418 },
-  { "name": "Oberösch", "id": 419 },
-  { "name": "Rüdtligen-Alchenflüh", "id": 420 },
-  { "name": "Rumendingen", "id": 421 },
-  { "name": "Rüti bei Lyssach", "id": 422 },
-  { "name": "Willadingen", "id": 423 },
-  { "name": "Wynigen", "id": 424 },
-  { "name": "Corgémont", "id": 431 },
-  { "name": "Corgemont", "id": 431 },
-  { "name": "Cormoret", "id": 432 },
-  { "name": "Cortébert", "id": 433 },
-  { "name": "Courtelary", "id": 434 },
-  { "name": "La Ferrière", "id": 435 },
-  { "name": "La Heutte", "id": 436 },
-  { "name": "Péry-La Heutte", "id": 436 },
-  { "name": "Mont-Tramelan", "id": 437 },
-  { "name": "Orvin", "id": 438 },
-  { "name": "Péry", "id": 439 },
-  { "name": "Plagne", "id": 440 },
-  { "name": "Renan (BE)", "id": 441 },
-  { "name": "Renan", "id": 441 },
-  { "name": "Romont (BE)", "id": 442 },
-  { "name": "Saint-Imier", "id": 443 },
-  { "name": "St Imier", "id": 443 },
-  { "name": "St. Immer", "id": 443 },
-  { "name": "Sonceboz-Sombeval", "id": 444 },
-  { "name": "Sonceboz", "id": 444 },
-  { "name": "Sonvilier", "id": 445 },
-  { "name": "Tramelan", "id": 446 },
-  { "name": "Vauffelin", "id": 447 },
-  { "name": "Villeret", "id": 448 },
-  { "name": "Brüttelen", "id": 491 },
-  { "name": "Erlach", "id": 492 },
-  { "name": "Finsterhennen", "id": 493 },
-  { "name": "Gals", "id": 494 },
-  { "name": "Gampelen", "id": 495 },
-  { "name": "Ins", "id": 496 },
-  { "name": "Lüscherz", "id": 497 },
-  { "name": "Müntschemier", "id": 498 },
-  { "name": "Siselen", "id": 499 },
-  { "name": "Treiten", "id": 500 },
-  { "name": "Tschugg", "id": 501 },
-  { "name": "Vinelz", "id": 502 },
-  { "name": "Bangerten", "id": 532 },
-  { "name": "Bätterkinden", "id": 533 },
-  { "name": "Büren zum Hof", "id": 534 },
-  { "name": "Deisswil bei Münchenbuchsee", "id": 535 },
-  { "name": "Diemerswil", "id": 536 },
-  { "name": "Etzelkofen", "id": 537 },
-  { "name": "Fraubrunnen", "id": 538 },
-  { "name": "Grafenried", "id": 539 },
-  { "name": "Jegenstorf", "id": 540 },
-  { "name": "Iffwil", "id": 541 },
-  { "name": "Limpach", "id": 542 },
-  { "name": "Mattstetten", "id": 543 },
-  { "name": "Moosseedorf", "id": 544 },
-  { "name": "Mülchi", "id": 545 },
-  { "name": "Münchenbuchsee", "id": 546 },
-  { "name": "Münchringen", "id": 547 },
-  { "name": "Schalunen", "id": 549 },
-  { "name": "Scheunen", "id": 550 },
-  { "name": "Urtenen-Schönbühl", "id": 551 },
-  { "name": "Utzenstorf", "id": 552 },
-  { "name": "Wiggiswil", "id": 553 },
-  { "name": "Wiler bei Utzenstorf", "id": 554 },
-  { "name": "Zauggenried", "id": 555 },
-  { "name": "Zielebach", "id": 556 },
-  { "name": "Zuzwil (BE)", "id": 557 },
-  { "name": "Adelboden", "id": 561 },
-  { "name": "Aeschi b. Spiez", "id": 562 },
-  { "name": "Frutigen", "id": 563 },
-  { "name": "Kandergrund", "id": 564 },
-  { "name": "Kandersteg", "id": 565 },
-  { "name": "Krattigen", "id": 566 },
-  { "name": "Reichenbach im Kandertal", "id": 567 },
-  { "name": "Beatenberg", "id": 571 },
-  { "name": "Bönigen", "id": 572 },
-  { "name": "Brienz (BE)", "id": 573 },
-  { "name": "Brienz", "id": 573 },
-  { "name": "Brienzwiler", "id": 574 },
-  { "name": "Därligen", "id": 575 },
-  { "name": "Grindelwald", "id": 576 },
-  { "name": "Gsteigwiler", "id": 577 },
-  { "name": "Gündlischwand", "id": 578 },
-  { "name": "Habkern", "id": 579 },
-  { "name": "Hofstetten bei Brienz", "id": 580 },
-  { "name": "Interlaken", "id": 581 },
-  { "name": "Iseltwald", "id": 582 },
-  { "name": "Lauterbrunnen", "id": 584 },
-  { "name": "Leissigen", "id": 585 },
-  { "name": "Lütschental", "id": 586 },
-  { "name": "Matten bei Interlaken", "id": 587 },
-  { "name": "Niederried bei Interlaken", "id": 588 },
-  { "name": "Oberried am Brienzersee", "id": 589 },
-  { "name": "Ringgenberg (BE)", "id": 590 },
-  { "name": "Saxeten", "id": 591 },
-  { "name": "Schwanden bei Brienz", "id": 592 },
-  { "name": "Unterseen", "id": 593 },
-  { "name": "Wilderswil", "id": 594 },
-  { "name": "Arni (BE)", "id": 602 },
-  { "name": "Biglen", "id": 603 },
-  { "name": "Bleiken bei Oberdiessbach", "id": 604 },
-  { "name": "Bowil", "id": 605 },
-  { "name": "Brenzikofen", "id": 606 },
-  { "name": "Freimettigen", "id": 607 },
-  { "name": "Grosshöchstetten", "id": 608 },
-  { "name": "Häutligen", "id": 609 },
-  { "name": "Herbligen", "id": 610 },
-  { "name": "Kiesen", "id": 611 },
-  { "name": "Konolfingen", "id": 612 },
-  { "name": "Landiswil", "id": 613 },
-  { "name": "Linden", "id": 614 },
-  { "name": "Mirchel", "id": 615 },
-  { "name": "Münsingen", "id": 616 },
-  { "name": "Niederhünigen", "id": 617 },
-  { "name": "Oberdiessbach", "id": 619 },
-  { "name": "Oberthal", "id": 620 },
-  { "name": "Oppligen", "id": 622 },
-  { "name": "Rubigen", "id": 623 },
-  { "name": "Schlosswil", "id": 624 },
-  { "name": "Tägertschi", "id": 625 },
-  { "name": "Walkringen", "id": 626 },
-  { "name": "Worb", "id": 627 },
-  { "name": "Zäziwil", "id": 628 },
-  { "name": "Oberhünigen", "id": 629 },
-  { "name": "Allmendingen", "id": 630 },
-  { "name": "Wichtrach", "id": 632 },
-  { "name": "Clavaleyres", "id": 661 },
-  { "name": "Ferenbalm", "id": 662 },
-  { "name": "Frauenkappelen", "id": 663 },
-  { "name": "Frauenkappeln", "id": 663 },
-  { "name": "Golaten", "id": 664 },
-  { "name": "Gurbrü", "id": 665 },
-  { "name": "Kriechenwil", "id": 666 },
-  { "name": "Laupen", "id": 667 },
-  { "name": "Mühleberg", "id": 668 },
-  { "name": "Münchenwiler", "id": 669 },
-  { "name": "Neuenegg", "id": 670 },
-  { "name": "Wileroltigen", "id": 671 },
-  { "name": "Belprahon", "id": 681 },
-  { "name": "Bévilard", "id": 682 },
-  { "name": "Champoz", "id": 683 },
-  { "name": "Châtelat", "id": 684 },
-  { "name": "Corcelles (BE)", "id": 687 },
-  { "name": "Court", "id": 690 },
-  { "name": "Crémines", "id": 691 },
-  { "name": "Eschert", "id": 692 },
-  { "name": "Grandval", "id": 694 },
-  { "name": "Loveresse", "id": 696 },
-  { "name": "Malleray", "id": 697 },
-  { "name": "Monible", "id": 699 },
-  { "name": "Moutier", "id": 700 },
-  { "name": "Perrefitte", "id": 701 },
-  { "name": "Pontenet", "id": 702 },
-  { "name": "Reconvilier", "id": 703 },
-  { "name": "Roches (BE)", "id": 704 },
-  { "name": "Saicourt", "id": 706 },
-  { "name": "Saules (BE)", "id": 707 },
-  { "name": "Schelten", "id": 708 },
-  { "name": "Seehof", "id": 709 },
-  { "name": "Sornetan", "id": 710 },
-  { "name": "Sorvilier", "id": 711 },
-  { "name": "Souboz", "id": 712 },
-  { "name": "Tavannes", "id": 713 },
-  { "name": "Rebévelier", "id": 715 },
-  { "name": "Diesse", "id": 721 },
-  { "name": "Lamboing", "id": 722 },
-  { "name": "La Neuveville", "id": 723 },
-  { "name": "Nods", "id": 724 },
-  { "name": "Prêles", "id": 725 },
-  { "name": "Aegerten", "id": 731 },
-  { "name": "Bellmund", "id": 732 },
-  { "name": "Brügg", "id": 733 },
-  { "name": "Bühl", "id": 734 },
-  { "name": "Epsach", "id": 735 },
-  { "name": "Hagneck", "id": 736 },
-  { "name": "Hermrigen", "id": 737 },
-  { "name": "Jens", "id": 738 },
-  { "name": "Ipsach", "id": 739 },
-  { "name": "Ligerz", "id": 740 },
-  { "name": "Merzligen", "id": 741 },
-  { "name": "Mörigen", "id": 742 },
-  { "name": "Nidau", "id": 743 },
-  { "name": "Orpund", "id": 744 },
-  { "name": "Port", "id": 745 },
-  { "name": "Safnern", "id": 746 },
-  { "name": "Scheuren", "id": 747 },
-  { "name": "Schwadernau", "id": 748 },
-  { "name": "Studen (BE)", "id": 749 },
-  { "name": "Wald", "id": 888 },
-  { "name": "Studen", "id": 749 },
-  { "name": "Sutz-Lattrigen", "id": 750 },
-  { "name": "Täuffelen", "id": 751 },
-  { "name": "Walperswil", "id": 754 },
-  { "name": "Worben", "id": 755 },
-  { "name": "Twann-Tüscherz", "id": 756 },
-  { "name": "Därstetten", "id": 761 },
-  { "name": "Diemtigen", "id": 762 },
-  { "name": "Erlenbach", "id": 763 },
-  { "name": "Erlenbach im Simmental", "id": 763 },
-  { "name": "Niederstocken", "id": 764 },
-  { "name": "Oberstocken", "id": 765 },
-  { "name": "Oberwil im Simmental", "id": 766 },
-  { "name": "Reutigen", "id": 767 },
-  { "name": "Spiez", "id": 768 },
-  { "name": "Wimmis", "id": 769 },
-  { "name": "Gadmen", "id": 781 },
-  { "name": "Guttannen", "id": 782 },
-  { "name": "Hasliberg", "id": 783 },
-  { "name": "Innertkirchen", "id": 784 },
-  { "name": "Meiringen", "id": 785 },
-  { "name": "Schattenhalb", "id": 786 },
-  { "name": "Boltigen", "id": 791 },
-  { "name": "Lenk", "id": 792 },
-  { "name": "St. Stephan", "id": 793 },
-  { "name": "Zweisimmen", "id": 794 },
-  { "name": "Gsteig", "id": 841 },
-  { "name": "Gsteig bei Gstaad", "id": 841 },
-  { "name": "Lauenen", "id": 842 },
-  { "name": "Saanen", "id": 843 },
-  { "name": "Gstaad", "id": 843 },
-  { "name": "Guggisberg", "id": 852 },
-  { "name": "Rüschegg", "id": 853 },
-  { "name": "Schwarzenburg", "id": 855 },
-  { "name": "Belp", "id": 861 },
-  { "name": "Burgistein", "id": 863 },
-  { "name": "Gelterfingen", "id": 865 },
-  { "name": "Gerzensee", "id": 866 },
-  { "name": "Gurzelen", "id": 867 },
-  { "name": "Jaberg", "id": 868 },
-  { "name": "Kaufdorf", "id": 869 },
-  { "name": "Kehrsatz", "id": 870 },
-  { "name": "Kienersrüti", "id": 871 },
-  { "name": "Kirchdorf (BE)", "id": 872 },
-  { "name": "Kirchdorf", "id": 872 },
-  { "name": "Kirchenthurnen", "id": 873 },
-  { "name": "Lohnstorf", "id": 874 },
-  { "name": "Mühledorf (BE)", "id": 875 },
-  { "name": "Mühlethurnen", "id": 876 },
-  { "name": "Niedermuhlern", "id": 877 },
-  { "name": "Noflen", "id": 878 },
-  { "name": "Riggisberg", "id": 879 },
-  { "name": "Rüeggisberg", "id": 880 },
-  { "name": "Rümligen", "id": 881 },
-  { "name": "Seftigen", "id": 883 },
-  { "name": "Toffen", "id": 884 },
-  { "name": "Uttigen", "id": 885 },
-  { "name": "Wattenwil", "id": 886 },
-  { "name": "Wald (BE)", "id": 888 },
-  { "name": "Eggiwil", "id": 901 },
-  { "name": "Langnau i.E.", "id": 902 },
-  { "name": "Langnau", "id": 902 },
-  { "name": "Langnau im Emmental", "id": 902 },
-  { "name": "Lauperswil", "id": 903 },
-  { "name": "Röthenbach im Emmental", "id": 904 },
-  { "name": "Rüderswil", "id": 905 },
-  { "name": "Schangnau", "id": 906 },
-  { "name": "Signau", "id": 907 },
-  { "name": "Trub", "id": 908 },
-  { "name": "Trubschachen", "id": 909 },
-  { "name": "Amsoldingen", "id": 921 },
-  { "name": "Blumenstein", "id": 922 },
-  { "name": "Buchholterberg", "id": 923 },
-  { "name": "Eriz", "id": 924 },
-  { "name": "Fahrni", "id": 925 },
-  { "name": "Heiligenschwendi", "id": 927 },
-  { "name": "Heimberg", "id": 928 },
-  { "name": "Hilterfingen", "id": 929 },
-  { "name": "Höfen", "id": 930 },
-  { "name": "Homberg", "id": 931 },
-  { "name": "Horrenbach-Buchen", "id": 932 },
-  { "name": "Oberhofen am Thunersee", "id": 934 },
-  { "name": "Oberhofen", "id": 934 },
-  { "name": "Oberlangenegg", "id": 935 },
-  { "name": "Pohlern", "id": 936 },
-  { "name": "Schwendibach", "id": 937 },
-  { "name": "Sigriswil", "id": 938 },
-  { "name": "Steffisburg", "id": 939 },
-  { "name": "Teuffenthal (BE)", "id": 940 },
-  { "name": "Thierachern", "id": 941 },
-  { "name": "Thun", "id": 942 },
-  { "name": "Uebeschi", "id": 943 },
-  { "name": "Uetendorf", "id": 944 },
-  { "name": "Unterlangenegg", "id": 945 },
-  { "name": "Wachseldorn", "id": 946 },
-  { "name": "Zwieselberg", "id": 947 },
-  { "name": "Forst-Längenbühl", "id": 948 },
-  { "name": "Affoltern im Emmental", "id": 951 },
-  { "name": "Dürrenroth", "id": 952 },
-  { "name": "Eriswil", "id": 953 },
-  { "name": "Huttwil", "id": 954 },
-  { "name": "Lützelflüh", "id": 955 },
-  { "name": "Lützelflüh-Goldbach", "id": 955 },
-  { "name": "Rüegsau", "id": 956 },
-  { "name": "Sumiswald", "id": 957 },
-  { "name": "Trachselwald", "id": 958 },
-  { "name": "Walterswil (BE)", "id": 959 },
-  { "name": "Wyssachen", "id": 960 },
-  { "name": "Attiswil", "id": 971 },
-  { "name": "Berken", "id": 972 },
-  { "name": "Bettenhausen", "id": 973 },
-  { "name": "Farnern", "id": 975 },
-  { "name": "Graben", "id": 976 },
-  { "name": "Heimenhausen", "id": 977 },
-  { "name": "Hermiswil", "id": 978 },
-  { "name": "Herzogenbuchsee", "id": 979 },
-  { "name": "Inkwil", "id": 980 },
-  { "name": "Niederbipp", "id": 981 },
-  { "name": "Niederönz", "id": 982 },
-  { "name": "Oberbipp", "id": 983 },
-  { "name": "Ochlenberg", "id": 985 },
-  { "name": "Rumisberg", "id": 987 },
-  { "name": "Seeberg", "id": 988 },
-  { "name": "Thörigen", "id": 989 },
-  { "name": "Walliswil bei Niederbipp", "id": 990 },
-  { "name": "Walliswil bei Wangen", "id": 991 },
-  { "name": "Wangen an der Aare", "id": 992 },
-  { "name": "Wangenried", "id": 993 },
-  { "name": "Wiedlisbach", "id": 995 },
-  { "name": "Wolfisberg", "id": 996 },
-  { "name": "Valbirse", "id": 682 }
+  {
+    "name": "Aarberg",
+    "id": 301
+  },
+  {
+    "name": "Bargen (BE)",
+    "id": 302
+  },
+  {
+    "name": "Bargen",
+    "id": 302
+  },
+  {
+    "name": "Grossaffoltern",
+    "id": 303
+  },
+  {
+    "name": "Kallnach",
+    "id": 304
+  },
+  {
+    "name": "Kappelen",
+    "id": 305
+  },
+  {
+    "name": "Lyss",
+    "id": 306
+  },
+  {
+    "name": "Meikirch",
+    "id": 307
+  },
+  {
+    "name": "Radelfingen",
+    "id": 309
+  },
+  {
+    "name": "Rapperswil (BE)",
+    "id": 310
+  },
+  {
+    "name": "Schüpfen",
+    "id": 311
+  },
+  {
+    "name": "Seedorf (BE)",
+    "id": 312
+  },
+  {
+    "name": "Seedorf BE",
+    "id": 312
+  },
+  {
+    "name": "Seedorf",
+    "id": 312
+  },
+  {
+    "name": "Aarwangen",
+    "id": 321
+  },
+  {
+    "name": "Auswil",
+    "id": 322
+  },
+  {
+    "name": "Bannwil",
+    "id": 323
+  },
+  {
+    "name": "Bleienbach",
+    "id": 324
+  },
+  {
+    "name": "Busswil bei Melchnau",
+    "id": 325
+  },
+  {
+    "name": "Gondiswil",
+    "id": 326
+  },
+  {
+    "name": "Langenthal",
+    "id": 329
+  },
+  {
+    "name": "Lotzwil",
+    "id": 331
+  },
+  {
+    "name": "Madiswil",
+    "id": 332
+  },
+  {
+    "name": "Melchnau",
+    "id": 333
+  },
+  {
+    "name": "Obersteckholz",
+    "id": 334
+  },
+  {
+    "name": "Oeschenbach",
+    "id": 335
+  },
+  {
+    "name": "Reisiswil",
+    "id": 336
+  },
+  {
+    "name": "Roggwil (BE)",
+    "id": 337
+  },
+  {
+    "name": "Roggwil",
+    "id": 337
+  },
+  {
+    "name": "Rohrbach",
+    "id": 338
+  },
+  {
+    "name": "Rohrbachgraben",
+    "id": 339
+  },
+  {
+    "name": "Rütschelen",
+    "id": 340
+  },
+  {
+    "name": "Schwarzhäusern",
+    "id": 341
+  },
+  {
+    "name": "Thunstetten",
+    "id": 342
+  },
+  {
+    "name": "Ursenbach",
+    "id": 344
+  },
+  {
+    "name": "Wynau",
+    "id": 345
+  },
+  {
+    "name": "Bern",
+    "id": 351
+  },
+  {
+    "name": "Bolligen",
+    "id": 352
+  },
+  {
+    "name": "Bremgarten bei Bern",
+    "id": 353
+  },
+  {
+    "name": "Bremgarten b. Bern",
+    "id": 353
+  },
+  {
+    "name": "Kirchlindach",
+    "id": 354
+  },
+  {
+    "name": "Köniz",
+    "id": 355
+  },
+  {
+    "name": "Wabern",
+    "id": 355
+  },
+  {
+    "name": "Muri bei Bern",
+    "id": 356
+  },
+  {
+    "name": "Muri",
+    "id": 356
+  },
+  {
+    "name": "Gümligen",
+    "id": 356
+  },
+  {
+    "name": "Oberbalm",
+    "id": 357
+  },
+  {
+    "name": "Stettlen",
+    "id": 358
+  },
+  {
+    "name": "Vechigen",
+    "id": 359
+  },
+  {
+    "name": "Wohlen bei Bern",
+    "id": 360
+  },
+  {
+    "name": "Wohlen",
+    "id": 360
+  },
+  {
+    "name": "Zollikofen",
+    "id": 361
+  },
+  {
+    "name": "Ittigen",
+    "id": 362
+  },
+  {
+    "name": "Worblaufen",
+    "id": 362
+  },
+  {
+    "name": "Ostermundigen",
+    "id": 363
+  },
+  {
+    "name": "Biel",
+    "id": 371
+  },
+  {
+    "name": "Biel/Bienne",
+    "id": 371
+  },
+  {
+    "name": "Bienne",
+    "id": 371
+  },
+  {
+    "name": "Evilard",
+    "id": 372
+  },
+  {
+    "name": "Leubringen",
+    "id": 372
+  },
+  {
+    "name": "Arch",
+    "id": 381
+  },
+  {
+    "name": "Büetigen",
+    "id": 382
+  },
+  {
+    "name": "Büren an der Aare",
+    "id": 383
+  },
+  {
+    "name": "Büren a.A.",
+    "id": 383
+  },
+  {
+    "name": "Diessbach bei Büren",
+    "id": 385
+  },
+  {
+    "name": "Diessbach b. Büren",
+    "id": 385
+  },
+  {
+    "name": "Dotzigen",
+    "id": 386
+  },
+  {
+    "name": "Lengnau (BE)",
+    "id": 387
+  },
+  {
+    "name": "Lengnau",
+    "id": 387
+  },
+  {
+    "name": "Leuzigen",
+    "id": 388
+  },
+  {
+    "name": "Meienried",
+    "id": 389
+  },
+  {
+    "name": "Meinisberg",
+    "id": 390
+  },
+  {
+    "name": "Oberwil bei Büren",
+    "id": 391
+  },
+  {
+    "name": "Pieterlen",
+    "id": 392
+  },
+  {
+    "name": "Rüti bei Büren",
+    "id": 393
+  },
+  {
+    "name": "Wengi",
+    "id": 394
+  },
+  {
+    "name": "Aefligen",
+    "id": 401
+  },
+  {
+    "name": "Alchenstorf",
+    "id": 402
+  },
+  {
+    "name": "Bäriswil",
+    "id": 403
+  },
+  {
+    "name": "Burgdorf",
+    "id": 404
+  },
+  {
+    "name": "Ersigen",
+    "id": 405
+  },
+  {
+    "name": "Ersingen",
+    "id": 405
+  },
+  {
+    "name": "Hasle bei Burgdorf",
+    "id": 406
+  },
+  {
+    "name": "Heimiswil",
+    "id": 407
+  },
+  {
+    "name": "Hellsau",
+    "id": 408
+  },
+  {
+    "name": "Hindelbank",
+    "id": 409
+  },
+  {
+    "name": "Höchstetten",
+    "id": 410
+  },
+  {
+    "name": "Kernenried",
+    "id": 411
+  },
+  {
+    "name": "Kirchberg (BE)",
+    "id": 412
+  },
+  {
+    "name": "Kirchberg",
+    "id": 412
+  },
+  {
+    "name": "Koppigen",
+    "id": 413
+  },
+  {
+    "name": "Krauchthal",
+    "id": 414
+  },
+  {
+    "name": "Lyssach",
+    "id": 415
+  },
+  {
+    "name": "Mötschwil",
+    "id": 416
+  },
+  {
+    "name": "Niederösch",
+    "id": 417
+  },
+  {
+    "name": "Oberburg",
+    "id": 418
+  },
+  {
+    "name": "Oberösch",
+    "id": 419
+  },
+  {
+    "name": "Rüdtligen-Alchenflüh",
+    "id": 420
+  },
+  {
+    "name": "Rumendingen",
+    "id": 421
+  },
+  {
+    "name": "Rüti bei Lyssach",
+    "id": 422
+  },
+  {
+    "name": "Willadingen",
+    "id": 423
+  },
+  {
+    "name": "Wynigen",
+    "id": 424
+  },
+  {
+    "name": "Corgémont",
+    "id": 431
+  },
+  {
+    "name": "Corgemont",
+    "id": 431
+  },
+  {
+    "name": "Cormoret",
+    "id": 432
+  },
+  {
+    "name": "Cortébert",
+    "id": 433
+  },
+  {
+    "name": "Courtelary",
+    "id": 434
+  },
+  {
+    "name": "La Ferrière",
+    "id": 435
+  },
+  {
+    "name": "La Heutte",
+    "id": 436
+  },
+  {
+    "name": "Péry-La Heutte",
+    "id": 436
+  },
+  {
+    "name": "Mont-Tramelan",
+    "id": 437
+  },
+  {
+    "name": "Orvin",
+    "id": 438
+  },
+  {
+    "name": "Péry",
+    "id": 439
+  },
+  {
+    "name": "Plagne",
+    "id": 440
+  },
+  {
+    "name": "Renan (BE)",
+    "id": 441
+  },
+  {
+    "name": "Renan",
+    "id": 441
+  },
+  {
+    "name": "Romont (BE)",
+    "id": 442
+  },
+  {
+    "name": "Saint-Imier",
+    "id": 443
+  },
+  {
+    "name": "St Imier",
+    "id": 443
+  },
+  {
+    "name": "St. Immer",
+    "id": 443
+  },
+  {
+    "name": "Sonceboz-Sombeval",
+    "id": 444
+  },
+  {
+    "name": "Sonceboz",
+    "id": 444
+  },
+  {
+    "name": "Sonvilier",
+    "id": 445
+  },
+  {
+    "name": "Tramelan",
+    "id": 446
+  },
+  {
+    "name": "Vauffelin",
+    "id": 447
+  },
+  {
+    "name": "Villeret",
+    "id": 448
+  },
+  {
+    "name": "Brüttelen",
+    "id": 491
+  },
+  {
+    "name": "Erlach",
+    "id": 492
+  },
+  {
+    "name": "Finsterhennen",
+    "id": 493
+  },
+  {
+    "name": "Gals",
+    "id": 494
+  },
+  {
+    "name": "Gampelen",
+    "id": 495
+  },
+  {
+    "name": "Ins",
+    "id": 496
+  },
+  {
+    "name": "Lüscherz",
+    "id": 497
+  },
+  {
+    "name": "Müntschemier",
+    "id": 498
+  },
+  {
+    "name": "Siselen",
+    "id": 499
+  },
+  {
+    "name": "Treiten",
+    "id": 500
+  },
+  {
+    "name": "Tschugg",
+    "id": 501
+  },
+  {
+    "name": "Vinelz",
+    "id": 502
+  },
+  {
+    "name": "Bangerten",
+    "id": 532
+  },
+  {
+    "name": "Bätterkinden",
+    "id": 533
+  },
+  {
+    "name": "Büren zum Hof",
+    "id": 534
+  },
+  {
+    "name": "Deisswil bei Münchenbuchsee",
+    "id": 535
+  },
+  {
+    "name": "Diemerswil",
+    "id": 536
+  },
+  {
+    "name": "Etzelkofen",
+    "id": 537
+  },
+  {
+    "name": "Fraubrunnen",
+    "id": 538
+  },
+  {
+    "name": "Grafenried",
+    "id": 539
+  },
+  {
+    "name": "Jegenstorf",
+    "id": 540
+  },
+  {
+    "name": "Iffwil",
+    "id": 541
+  },
+  {
+    "name": "Limpach",
+    "id": 542
+  },
+  {
+    "name": "Mattstetten",
+    "id": 543
+  },
+  {
+    "name": "Moosseedorf",
+    "id": 544
+  },
+  {
+    "name": "Mülchi",
+    "id": 545
+  },
+  {
+    "name": "Münchenbuchsee",
+    "id": 546
+  },
+  {
+    "name": "Münchringen",
+    "id": 547
+  },
+  {
+    "name": "Schalunen",
+    "id": 549
+  },
+  {
+    "name": "Scheunen",
+    "id": 550
+  },
+  {
+    "name": "Urtenen-Schönbühl",
+    "id": 551
+  },
+  {
+    "name": "Utzenstorf",
+    "id": 552
+  },
+  {
+    "name": "Wiggiswil",
+    "id": 553
+  },
+  {
+    "name": "Wiler bei Utzenstorf",
+    "id": 554
+  },
+  {
+    "name": "Zauggenried",
+    "id": 555
+  },
+  {
+    "name": "Zielebach",
+    "id": 556
+  },
+  {
+    "name": "Zuzwil (BE)",
+    "id": 557
+  },
+  {
+    "name": "Adelboden",
+    "id": 561
+  },
+  {
+    "name": "Aeschi b. Spiez",
+    "id": 562
+  },
+  {
+    "name": "Frutigen",
+    "id": 563
+  },
+  {
+    "name": "Kandergrund",
+    "id": 564
+  },
+  {
+    "name": "Kandersteg",
+    "id": 565
+  },
+  {
+    "name": "Krattigen",
+    "id": 566
+  },
+  {
+    "name": "Reichenbach im Kandertal",
+    "id": 567
+  },
+  {
+    "name": "Beatenberg",
+    "id": 571
+  },
+  {
+    "name": "Bönigen",
+    "id": 572
+  },
+  {
+    "name": "Bönigen b. Interlaken",
+    "id": 572
+  },
+  {
+    "name": "Brienz (BE)",
+    "id": 573
+  },
+  {
+    "name": "Brienz",
+    "id": 573
+  },
+  {
+    "name": "Brienzwiler",
+    "id": 574
+  },
+  {
+    "name": "Därligen",
+    "id": 575
+  },
+  {
+    "name": "Grindelwald",
+    "id": 576
+  },
+  {
+    "name": "Gsteigwiler",
+    "id": 577
+  },
+  {
+    "name": "Gündlischwand",
+    "id": 578
+  },
+  {
+    "name": "Habkern",
+    "id": 579
+  },
+  {
+    "name": "Hofstetten bei Brienz",
+    "id": 580
+  },
+  {
+    "name": "Interlaken",
+    "id": 581
+  },
+  {
+    "name": "Iseltwald",
+    "id": 582
+  },
+  {
+    "name": "Lauterbrunnen",
+    "id": 584
+  },
+  {
+    "name": "Leissigen",
+    "id": 585
+  },
+  {
+    "name": "Lütschental",
+    "id": 586
+  },
+  {
+    "name": "Matten bei Interlaken",
+    "id": 587
+  },
+  {
+    "name": "Niederried bei Interlaken",
+    "id": 588
+  },
+  {
+    "name": "Oberried am Brienzersee",
+    "id": 589
+  },
+  {
+    "name": "Ringgenberg (BE)",
+    "id": 590
+  },
+  {
+    "name": "Saxeten",
+    "id": 591
+  },
+  {
+    "name": "Schwanden bei Brienz",
+    "id": 592
+  },
+  {
+    "name": "Unterseen",
+    "id": 593
+  },
+  {
+    "name": "Wilderswil",
+    "id": 594
+  },
+  {
+    "name": "Arni (BE)",
+    "id": 602
+  },
+  {
+    "name": "Biglen",
+    "id": 603
+  },
+  {
+    "name": "Bleiken bei Oberdiessbach",
+    "id": 604
+  },
+  {
+    "name": "Bowil",
+    "id": 605
+  },
+  {
+    "name": "Brenzikofen",
+    "id": 606
+  },
+  {
+    "name": "Freimettigen",
+    "id": 607
+  },
+  {
+    "name": "Grosshöchstetten",
+    "id": 608
+  },
+  {
+    "name": "Häutligen",
+    "id": 609
+  },
+  {
+    "name": "Herbligen",
+    "id": 610
+  },
+  {
+    "name": "Kiesen",
+    "id": 611
+  },
+  {
+    "name": "Konolfingen",
+    "id": 612
+  },
+  {
+    "name": "Landiswil",
+    "id": 613
+  },
+  {
+    "name": "Linden",
+    "id": 614
+  },
+  {
+    "name": "Mirchel",
+    "id": 615
+  },
+  {
+    "name": "Münsingen",
+    "id": 616
+  },
+  {
+    "name": "Niederhünigen",
+    "id": 617
+  },
+  {
+    "name": "Oberdiessbach",
+    "id": 619
+  },
+  {
+    "name": "Oberthal",
+    "id": 620
+  },
+  {
+    "name": "Oppligen",
+    "id": 622
+  },
+  {
+    "name": "Rubigen",
+    "id": 623
+  },
+  {
+    "name": "Schlosswil",
+    "id": 624
+  },
+  {
+    "name": "Tägertschi",
+    "id": 625
+  },
+  {
+    "name": "Walkringen",
+    "id": 626
+  },
+  {
+    "name": "Worb",
+    "id": 627
+  },
+  {
+    "name": "Zäziwil",
+    "id": 628
+  },
+  {
+    "name": "Oberhünigen",
+    "id": 629
+  },
+  {
+    "name": "Allmendingen",
+    "id": 630
+  },
+  {
+    "name": "Wichtrach",
+    "id": 632
+  },
+  {
+    "name": "Clavaleyres",
+    "id": 661
+  },
+  {
+    "name": "Ferenbalm",
+    "id": 662
+  },
+  {
+    "name": "Frauenkappelen",
+    "id": 663
+  },
+  {
+    "name": "Frauenkappeln",
+    "id": 663
+  },
+  {
+    "name": "Golaten",
+    "id": 664
+  },
+  {
+    "name": "Gurbrü",
+    "id": 665
+  },
+  {
+    "name": "Kriechenwil",
+    "id": 666
+  },
+  {
+    "name": "Laupen",
+    "id": 667
+  },
+  {
+    "name": "Mühleberg",
+    "id": 668
+  },
+  {
+    "name": "Münchenwiler",
+    "id": 669
+  },
+  {
+    "name": "Neuenegg",
+    "id": 670
+  },
+  {
+    "name": "Wileroltigen",
+    "id": 671
+  },
+  {
+    "name": "Belprahon",
+    "id": 681
+  },
+  {
+    "name": "Bévilard",
+    "id": 682
+  },
+  {
+    "name": "Champoz",
+    "id": 683
+  },
+  {
+    "name": "Châtelat",
+    "id": 684
+  },
+  {
+    "name": "Corcelles (BE)",
+    "id": 687
+  },
+  {
+    "name": "Court",
+    "id": 690
+  },
+  {
+    "name": "Crémines",
+    "id": 691
+  },
+  {
+    "name": "Eschert",
+    "id": 692
+  },
+  {
+    "name": "Grandval",
+    "id": 694
+  },
+  {
+    "name": "Loveresse",
+    "id": 696
+  },
+  {
+    "name": "Malleray",
+    "id": 697
+  },
+  {
+    "name": "Monible",
+    "id": 699
+  },
+  {
+    "name": "Moutier",
+    "id": 700
+  },
+  {
+    "name": "Perrefitte",
+    "id": 701
+  },
+  {
+    "name": "Pontenet",
+    "id": 702
+  },
+  {
+    "name": "Reconvilier",
+    "id": 703
+  },
+  {
+    "name": "Roches (BE)",
+    "id": 704
+  },
+  {
+    "name": "Saicourt",
+    "id": 706
+  },
+  {
+    "name": "Saules (BE)",
+    "id": 707
+  },
+  {
+    "name": "Schelten",
+    "id": 708
+  },
+  {
+    "name": "Seehof",
+    "id": 709
+  },
+  {
+    "name": "Sornetan",
+    "id": 710
+  },
+  {
+    "name": "Sorvilier",
+    "id": 711
+  },
+  {
+    "name": "Souboz",
+    "id": 712
+  },
+  {
+    "name": "Tavannes",
+    "id": 713
+  },
+  {
+    "name": "Rebévelier",
+    "id": 715
+  },
+  {
+    "name": "Diesse",
+    "id": 721
+  },
+  {
+    "name": "Lamboing",
+    "id": 722
+  },
+  {
+    "name": "La Neuveville",
+    "id": 723
+  },
+  {
+    "name": "Nods",
+    "id": 724
+  },
+  {
+    "name": "Prêles",
+    "id": 725
+  },
+  {
+    "name": "Aegerten",
+    "id": 731
+  },
+  {
+    "name": "Bellmund",
+    "id": 732
+  },
+  {
+    "name": "Brügg",
+    "id": 733
+  },
+  {
+    "name": "Bühl",
+    "id": 734
+  },
+  {
+    "name": "Epsach",
+    "id": 735
+  },
+  {
+    "name": "Hagneck",
+    "id": 736
+  },
+  {
+    "name": "Hermrigen",
+    "id": 737
+  },
+  {
+    "name": "Jens",
+    "id": 738
+  },
+  {
+    "name": "Ipsach",
+    "id": 739
+  },
+  {
+    "name": "Ligerz",
+    "id": 740
+  },
+  {
+    "name": "Merzligen",
+    "id": 741
+  },
+  {
+    "name": "Mörigen",
+    "id": 742
+  },
+  {
+    "name": "Nidau",
+    "id": 743
+  },
+  {
+    "name": "Orpund",
+    "id": 744
+  },
+  {
+    "name": "Port",
+    "id": 745
+  },
+  {
+    "name": "Safnern",
+    "id": 746
+  },
+  {
+    "name": "Scheuren",
+    "id": 747
+  },
+  {
+    "name": "Schwadernau",
+    "id": 748
+  },
+  {
+    "name": "Studen (BE)",
+    "id": 749
+  },
+  {
+    "name": "Wald",
+    "id": 888
+  },
+  {
+    "name": "Studen",
+    "id": 749
+  },
+  {
+    "name": "Sutz-Lattrigen",
+    "id": 750
+  },
+  {
+    "name": "Täuffelen",
+    "id": 751
+  },
+  {
+    "name": "Walperswil",
+    "id": 754
+  },
+  {
+    "name": "Worben",
+    "id": 755
+  },
+  {
+    "name": "Twann-Tüscherz",
+    "id": 756
+  },
+  {
+    "name": "Därstetten",
+    "id": 761
+  },
+  {
+    "name": "Diemtigen",
+    "id": 762
+  },
+  {
+    "name": "Erlenbach",
+    "id": 763
+  },
+  {
+    "name": "Erlenbach im Simmental",
+    "id": 763
+  },
+  {
+    "name": "Niederstocken",
+    "id": 764
+  },
+  {
+    "name": "Oberstocken",
+    "id": 765
+  },
+  {
+    "name": "Oberwil im Simmental",
+    "id": 766
+  },
+  {
+    "name": "Reutigen",
+    "id": 767
+  },
+  {
+    "name": "Spiez",
+    "id": 768
+  },
+  {
+    "name": "Wimmis",
+    "id": 769
+  },
+  {
+    "name": "Gadmen",
+    "id": 781
+  },
+  {
+    "name": "Guttannen",
+    "id": 782
+  },
+  {
+    "name": "Hasliberg",
+    "id": 783
+  },
+  {
+    "name": "Innertkirchen",
+    "id": 784
+  },
+  {
+    "name": "Meiringen",
+    "id": 785
+  },
+  {
+    "name": "Schattenhalb",
+    "id": 786
+  },
+  {
+    "name": "Boltigen",
+    "id": 791
+  },
+  {
+    "name": "Lenk",
+    "id": 792
+  },
+  {
+    "name": "St. Stephan",
+    "id": 793
+  },
+  {
+    "name": "Zweisimmen",
+    "id": 794
+  },
+  {
+    "name": "Gsteig",
+    "id": 841
+  },
+  {
+    "name": "Gsteig bei Gstaad",
+    "id": 841
+  },
+  {
+    "name": "Lauenen",
+    "id": 842
+  },
+  {
+    "name": "Saanen",
+    "id": 843
+  },
+  {
+    "name": "Gstaad",
+    "id": 843
+  },
+  {
+    "name": "Guggisberg",
+    "id": 852
+  },
+  {
+    "name": "Rüschegg",
+    "id": 853
+  },
+  {
+    "name": "Schwarzenburg",
+    "id": 855
+  },
+  {
+    "name": "Belp",
+    "id": 861
+  },
+  {
+    "name": "Burgistein",
+    "id": 863
+  },
+  {
+    "name": "Gelterfingen",
+    "id": 865
+  },
+  {
+    "name": "Gerzensee",
+    "id": 866
+  },
+  {
+    "name": "Gurzelen",
+    "id": 867
+  },
+  {
+    "name": "Jaberg",
+    "id": 868
+  },
+  {
+    "name": "Kaufdorf",
+    "id": 869
+  },
+  {
+    "name": "Kehrsatz",
+    "id": 870
+  },
+  {
+    "name": "Kienersrüti",
+    "id": 871
+  },
+  {
+    "name": "Kirchdorf (BE)",
+    "id": 872
+  },
+  {
+    "name": "Kirchdorf",
+    "id": 872
+  },
+  {
+    "name": "Kirchenthurnen",
+    "id": 873
+  },
+  {
+    "name": "Lohnstorf",
+    "id": 874
+  },
+  {
+    "name": "Mühledorf (BE)",
+    "id": 875
+  },
+  {
+    "name": "Mühlethurnen",
+    "id": 876
+  },
+  {
+    "name": "Niedermuhlern",
+    "id": 877
+  },
+  {
+    "name": "Noflen",
+    "id": 878
+  },
+  {
+    "name": "Riggisberg",
+    "id": 879
+  },
+  {
+    "name": "Rüeggisberg",
+    "id": 880
+  },
+  {
+    "name": "Rümligen",
+    "id": 881
+  },
+  {
+    "name": "Seftigen",
+    "id": 883
+  },
+  {
+    "name": "Toffen",
+    "id": 884
+  },
+  {
+    "name": "Uttigen",
+    "id": 885
+  },
+  {
+    "name": "Wattenwil",
+    "id": 886
+  },
+  {
+    "name": "Wald (BE)",
+    "id": 888
+  },
+  {
+    "name": "Eggiwil",
+    "id": 901
+  },
+  {
+    "name": "Langnau i.E.",
+    "id": 902
+  },
+  {
+    "name": "Langnau",
+    "id": 902
+  },
+  {
+    "name": "Langnau im Emmental",
+    "id": 902
+  },
+  {
+    "name": "Lauperswil",
+    "id": 903
+  },
+  {
+    "name": "Röthenbach im Emmental",
+    "id": 904
+  },
+  {
+    "name": "Rüderswil",
+    "id": 905
+  },
+  {
+    "name": "Schangnau",
+    "id": 906
+  },
+  {
+    "name": "Signau",
+    "id": 907
+  },
+  {
+    "name": "Trub",
+    "id": 908
+  },
+  {
+    "name": "Trubschachen",
+    "id": 909
+  },
+  {
+    "name": "Amsoldingen",
+    "id": 921
+  },
+  {
+    "name": "Blumenstein",
+    "id": 922
+  },
+  {
+    "name": "Buchholterberg",
+    "id": 923
+  },
+  {
+    "name": "Eriz",
+    "id": 924
+  },
+  {
+    "name": "Fahrni",
+    "id": 925
+  },
+  {
+    "name": "Heiligenschwendi",
+    "id": 927
+  },
+  {
+    "name": "Heimberg",
+    "id": 928
+  },
+  {
+    "name": "Hilterfingen",
+    "id": 929
+  },
+  {
+    "name": "Höfen",
+    "id": 930
+  },
+  {
+    "name": "Homberg",
+    "id": 931
+  },
+  {
+    "name": "Horrenbach-Buchen",
+    "id": 932
+  },
+  {
+    "name": "Oberhofen am Thunersee",
+    "id": 934
+  },
+  {
+    "name": "Oberhofen",
+    "id": 934
+  },
+  {
+    "name": "Oberlangenegg",
+    "id": 935
+  },
+  {
+    "name": "Pohlern",
+    "id": 936
+  },
+  {
+    "name": "Schwendibach",
+    "id": 937
+  },
+  {
+    "name": "Sigriswil",
+    "id": 938
+  },
+  {
+    "name": "Steffisburg",
+    "id": 939
+  },
+  {
+    "name": "Teuffenthal (BE)",
+    "id": 940
+  },
+  {
+    "name": "Thierachern",
+    "id": 941
+  },
+  {
+    "name": "Thun",
+    "id": 942
+  },
+  {
+    "name": "Uebeschi",
+    "id": 943
+  },
+  {
+    "name": "Uetendorf",
+    "id": 944
+  },
+  {
+    "name": "Unterlangenegg",
+    "id": 945
+  },
+  {
+    "name": "Wachseldorn",
+    "id": 946
+  },
+  {
+    "name": "Zwieselberg",
+    "id": 947
+  },
+  {
+    "name": "Forst-Längenbühl",
+    "id": 948
+  },
+  {
+    "name": "Affoltern im Emmental",
+    "id": 951
+  },
+  {
+    "name": "Dürrenroth",
+    "id": 952
+  },
+  {
+    "name": "Eriswil",
+    "id": 953
+  },
+  {
+    "name": "Huttwil",
+    "id": 954
+  },
+  {
+    "name": "Lützelflüh",
+    "id": 955
+  },
+  {
+    "name": "Lützelflüh-Goldbach",
+    "id": 955
+  },
+  {
+    "name": "Rüegsau",
+    "id": 956
+  },
+  {
+    "name": "Sumiswald",
+    "id": 957
+  },
+  {
+    "name": "Trachselwald",
+    "id": 958
+  },
+  {
+    "name": "Walterswil (BE)",
+    "id": 959
+  },
+  {
+    "name": "Wyssachen",
+    "id": 960
+  },
+  {
+    "name": "Attiswil",
+    "id": 971
+  },
+  {
+    "name": "Berken",
+    "id": 972
+  },
+  {
+    "name": "Bettenhausen",
+    "id": 973
+  },
+  {
+    "name": "Farnern",
+    "id": 975
+  },
+  {
+    "name": "Graben",
+    "id": 976
+  },
+  {
+    "name": "Heimenhausen",
+    "id": 977
+  },
+  {
+    "name": "Hermiswil",
+    "id": 978
+  },
+  {
+    "name": "Herzogenbuchsee",
+    "id": 979
+  },
+  {
+    "name": "Inkwil",
+    "id": 980
+  },
+  {
+    "name": "Niederbipp",
+    "id": 981
+  },
+  {
+    "name": "Niederönz",
+    "id": 982
+  },
+  {
+    "name": "Oberbipp",
+    "id": 983
+  },
+  {
+    "name": "Ochlenberg",
+    "id": 985
+  },
+  {
+    "name": "Rumisberg",
+    "id": 987
+  },
+  {
+    "name": "Seeberg",
+    "id": 988
+  },
+  {
+    "name": "Thörigen",
+    "id": 989
+  },
+  {
+    "name": "Walliswil bei Niederbipp",
+    "id": 990
+  },
+  {
+    "name": "Walliswil bei Wangen",
+    "id": 991
+  },
+  {
+    "name": "Wangen an der Aare",
+    "id": 992
+  },
+  {
+    "name": "Wangenried",
+    "id": 993
+  },
+  {
+    "name": "Wiedlisbach",
+    "id": 995
+  },
+  {
+    "name": "Wolfisberg",
+    "id": 996
+  },
+  {
+    "name": "Valbirse",
+    "id": 682
+  }
 ]

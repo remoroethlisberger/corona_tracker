@@ -1,1 +1,334 @@
-[{"primary":"2020-07-23","secondary":2},{"primary":"2020-07-24","secondary":3},{"primary":"2020-07-25","secondary":3},{"primary":"2020-07-26","secondary":9},{"primary":"2020-07-27","secondary":10},{"primary":"2020-07-28","secondary":10},{"primary":"2020-07-29","secondary":2},{"primary":"2020-07-30","secondary":4},{"primary":"2020-07-31","secondary":13},{"primary":"2020-08-01","secondary":13},{"primary":"2020-08-02","secondary":18},{"primary":"2020-08-03","secondary":5},{"primary":"2020-08-04","secondary":2},{"primary":"2020-08-05","secondary":14},{"primary":"2020-08-06","secondary":12},{"primary":"2020-08-07","secondary":13},{"primary":"2020-08-08","secondary":8},{"primary":"2020-08-09","secondary":6},{"primary":"2020-08-10","secondary":4},{"primary":"2020-08-11","secondary":14},{"primary":"2020-08-12","secondary":14},{"primary":"2020-08-13","secondary":22},{"primary":"2020-08-14","secondary":23},{"primary":"2020-08-15","secondary":16},{"primary":"2020-08-16","secondary":13},{"primary":"2020-08-17","secondary":5},{"primary":"2020-08-18","secondary":7},{"primary":"2020-08-19","secondary":19},{"primary":"2020-08-20","secondary":11},{"primary":"2020-08-21","secondary":24},{"primary":"2020-08-22","secondary":9},{"primary":"2020-08-23","secondary":15},{"primary":"2020-08-24","secondary":12},{"primary":"2020-08-25","secondary":11},{"primary":"2020-08-26","secondary":23},{"primary":"2020-08-27","secondary":19},{"primary":"2020-08-28","secondary":25},{"primary":"2020-08-29","secondary":19},{"primary":"2020-08-30","secondary":23},{"primary":"2020-08-31","secondary":6},{"primary":"2020-09-01","secondary":15},{"primary":"2020-09-02","secondary":9},{"primary":"2020-09-03","secondary":23},{"primary":"2020-09-04","secondary":26},{"primary":"2020-09-05","secondary":40},{"primary":"2020-09-06","secondary":23},{"primary":"2020-09-07","secondary":8},{"primary":"2020-09-08","secondary":17},{"primary":"2020-09-09","secondary":24},{"primary":"2020-09-10","secondary":28},{"primary":"2020-09-11","secondary":35},{"primary":"2020-09-12","secondary":26},{"primary":"2020-09-13","secondary":42},{"primary":"2020-09-14","secondary":14},{"primary":"2020-09-15","secondary":27},{"primary":"2020-09-16","secondary":54},{"primary":"2020-09-17","secondary":43},{"primary":"2020-09-18","secondary":52},{"primary":"2020-09-19","secondary":60},{"primary":"2020-09-20","secondary":46},{"primary":"2020-09-21","secondary":28},{"primary":"2020-09-22","secondary":25},{"primary":"2020-09-23","secondary":35},{"primary":"2020-09-24","secondary":48},{"primary":"2020-09-25","secondary":36},{"primary":"2020-09-26","secondary":41},{"primary":"2020-09-27","secondary":35},{"primary":"2020-09-28","secondary":24},{"primary":"2020-09-29","secondary":24},{"primary":"2020-09-30","secondary":45},{"primary":"2020-10-01","secondary":52},{"primary":"2020-10-02","secondary":55},{"primary":"2020-10-03","secondary":48},{"primary":"2020-10-04","secondary":65},{"primary":"2020-10-05","secondary":38},{"primary":"2020-10-06","secondary":65},{"primary":"2020-10-07","secondary":84},{"primary":"2020-10-08","secondary":98},{"primary":"2020-10-09","secondary":99},{"primary":"2020-10-10","secondary":113},{"primary":"2020-10-11","secondary":134}]
+[
+    {
+        "primary": "2020-07-23",
+        "secondary": 2
+    },
+    {
+        "primary": "2020-07-24",
+        "secondary": 3
+    },
+    {
+        "primary": "2020-07-25",
+        "secondary": 3
+    },
+    {
+        "primary": "2020-07-26",
+        "secondary": 9
+    },
+    {
+        "primary": "2020-07-27",
+        "secondary": 10
+    },
+    {
+        "primary": "2020-07-28",
+        "secondary": 10
+    },
+    {
+        "primary": "2020-07-29",
+        "secondary": 2
+    },
+    {
+        "primary": "2020-07-30",
+        "secondary": 4
+    },
+    {
+        "primary": "2020-07-31",
+        "secondary": 13
+    },
+    {
+        "primary": "2020-08-01",
+        "secondary": 13
+    },
+    {
+        "primary": "2020-08-02",
+        "secondary": 18
+    },
+    {
+        "primary": "2020-08-03",
+        "secondary": 5
+    },
+    {
+        "primary": "2020-08-04",
+        "secondary": 2
+    },
+    {
+        "primary": "2020-08-05",
+        "secondary": 14
+    },
+    {
+        "primary": "2020-08-06",
+        "secondary": 12
+    },
+    {
+        "primary": "2020-08-07",
+        "secondary": 13
+    },
+    {
+        "primary": "2020-08-08",
+        "secondary": 8
+    },
+    {
+        "primary": "2020-08-09",
+        "secondary": 6
+    },
+    {
+        "primary": "2020-08-10",
+        "secondary": 4
+    },
+    {
+        "primary": "2020-08-11",
+        "secondary": 14
+    },
+    {
+        "primary": "2020-08-12",
+        "secondary": 14
+    },
+    {
+        "primary": "2020-08-13",
+        "secondary": 22
+    },
+    {
+        "primary": "2020-08-14",
+        "secondary": 23
+    },
+    {
+        "primary": "2020-08-15",
+        "secondary": 16
+    },
+    {
+        "primary": "2020-08-16",
+        "secondary": 13
+    },
+    {
+        "primary": "2020-08-17",
+        "secondary": 5
+    },
+    {
+        "primary": "2020-08-18",
+        "secondary": 7
+    },
+    {
+        "primary": "2020-08-19",
+        "secondary": 19
+    },
+    {
+        "primary": "2020-08-20",
+        "secondary": 11
+    },
+    {
+        "primary": "2020-08-21",
+        "secondary": 24
+    },
+    {
+        "primary": "2020-08-22",
+        "secondary": 9
+    },
+    {
+        "primary": "2020-08-23",
+        "secondary": 15
+    },
+    {
+        "primary": "2020-08-24",
+        "secondary": 12
+    },
+    {
+        "primary": "2020-08-25",
+        "secondary": 11
+    },
+    {
+        "primary": "2020-08-26",
+        "secondary": 23
+    },
+    {
+        "primary": "2020-08-27",
+        "secondary": 19
+    },
+    {
+        "primary": "2020-08-28",
+        "secondary": 25
+    },
+    {
+        "primary": "2020-08-29",
+        "secondary": 19
+    },
+    {
+        "primary": "2020-08-30",
+        "secondary": 23
+    },
+    {
+        "primary": "2020-08-31",
+        "secondary": 6
+    },
+    {
+        "primary": "2020-09-01",
+        "secondary": 15
+    },
+    {
+        "primary": "2020-09-02",
+        "secondary": 9
+    },
+    {
+        "primary": "2020-09-03",
+        "secondary": 23
+    },
+    {
+        "primary": "2020-09-04",
+        "secondary": 26
+    },
+    {
+        "primary": "2020-09-05",
+        "secondary": 40
+    },
+    {
+        "primary": "2020-09-06",
+        "secondary": 23
+    },
+    {
+        "primary": "2020-09-07",
+        "secondary": 8
+    },
+    {
+        "primary": "2020-09-08",
+        "secondary": 17
+    },
+    {
+        "primary": "2020-09-09",
+        "secondary": 24
+    },
+    {
+        "primary": "2020-09-10",
+        "secondary": 28
+    },
+    {
+        "primary": "2020-09-11",
+        "secondary": 35
+    },
+    {
+        "primary": "2020-09-12",
+        "secondary": 26
+    },
+    {
+        "primary": "2020-09-13",
+        "secondary": 42
+    },
+    {
+        "primary": "2020-09-14",
+        "secondary": 14
+    },
+    {
+        "primary": "2020-09-15",
+        "secondary": 27
+    },
+    {
+        "primary": "2020-09-16",
+        "secondary": 54
+    },
+    {
+        "primary": "2020-09-17",
+        "secondary": 43
+    },
+    {
+        "primary": "2020-09-18",
+        "secondary": 52
+    },
+    {
+        "primary": "2020-09-19",
+        "secondary": 60
+    },
+    {
+        "primary": "2020-09-20",
+        "secondary": 46
+    },
+    {
+        "primary": "2020-09-21",
+        "secondary": 28
+    },
+    {
+        "primary": "2020-09-22",
+        "secondary": 25
+    },
+    {
+        "primary": "2020-09-23",
+        "secondary": 35
+    },
+    {
+        "primary": "2020-09-24",
+        "secondary": 48
+    },
+    {
+        "primary": "2020-09-25",
+        "secondary": 36
+    },
+    {
+        "primary": "2020-09-26",
+        "secondary": 41
+    },
+    {
+        "primary": "2020-09-27",
+        "secondary": 35
+    },
+    {
+        "primary": "2020-09-28",
+        "secondary": 24
+    },
+    {
+        "primary": "2020-09-29",
+        "secondary": 24
+    },
+    {
+        "primary": "2020-09-30",
+        "secondary": 45
+    },
+    {
+        "primary": "2020-10-01",
+        "secondary": 52
+    },
+    {
+        "primary": "2020-10-02",
+        "secondary": 55
+    },
+    {
+        "primary": "2020-10-03",
+        "secondary": 48
+    },
+    {
+        "primary": "2020-10-04",
+        "secondary": 65
+    },
+    {
+        "primary": "2020-10-05",
+        "secondary": 38
+    },
+    {
+        "primary": "2020-10-06",
+        "secondary": 65
+    },
+    {
+        "primary": "2020-10-07",
+        "secondary": 84
+    },
+    {
+        "primary": "2020-10-08",
+        "secondary": 98
+    },
+    {
+        "primary": "2020-10-09",
+        "secondary": 99
+    },
+    {
+        "primary": "2020-10-10",
+        "secondary": 113
+    },
+    {
+        "primary": "2020-10-11",
+        "secondary": 134
+    },
+    {
+        "primary": "2020-10-12",
+        "secondary": 61
+    },
+    {
+        "primary": "2020-10-13",
+        "secondary": 149
+    }
+]
