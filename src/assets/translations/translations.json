@@ -28,7 +28,8 @@
       "changes_saved": "Changes saved",
       "over_the_last": "Over the last",
       "over_the_last_1": "Over the last day",
-      "days": "days"
+      "days": "days",
+      "7_day_trend": "7 Day Average"
     }
   },
   "de": {
@@ -60,7 +61,8 @@
       "changes_saved": "Änderungen gespeichert",
       "over_the_last": "Während den letzten",
       "over_the_last_1": "Während einem Tag",
-      "days": "Tagen"
+      "days": "Tagen",
+      "7_day_trend": "7-Tage-Schnitt"
     }
   },
   "fr": {
@@ -85,7 +87,8 @@
       "register": "Register",
       "over_the_last": "Dans les derniers",
       "over_the_last_1": "Dans un jour",
-      "days": "jours"
+      "days": "jours",
+      "7_day_trend": "Moyenne mobile sur 7 jours"
     }
   }
 }

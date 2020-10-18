@@ -29,8 +29,8 @@ const CoronaTracker = (props) => {
               🦠
             </span>
           ) : (
-            ''
-          )}
+              ''
+            )}
         </h2>
         <Map>
           <Info />

@@ -133,6 +133,14 @@ const Map = (props) => {
             })
             .attr('id', d.id);
         });
+      /*
+    const outdated = svg.append('text')
+    const newlink = svg.append('a')
+    newlink.attr('href', '/#/analytics').append('text').text(() => { return "Click here for new visual!" }).attr("font-size", "40px").attr("fill", "red")
+    newlink.attr('transform', 'translate(100,300)')
+    outdated.text(() => { return "Outdated" }).attr("font-family", "sans-serif").attr("font-size", "50px").attr("fill", "red")
+    outdated.attr('transform', 'translate(200,250)')
+    */
       countries.exit().remove();
     }
   }, [node]);

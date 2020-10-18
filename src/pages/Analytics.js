@@ -3,10 +3,7 @@ import PageWrapper from '../elements/PageWrapper/PageWrapper';
 import { Chart } from "react-charts";
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import casesbyday from '../assets/data/dailycases.json'
-
-
-import ReactGA from 'react-ga';
+import casesbyday from '../assets/data/dailycases_pull.json'
 
 import {
   select,
@@ -22,40 +19,47 @@ import {
   selectAll,
   scaleOrdinal,
   max,
-  timeFormat
+  timeFormat,
+  mouse,
+  bisector,
+  bisect
 } from 'd3';
 import { useEffect } from 'react';
 
 const Analytics = (props) => {
 
   const { t } = useTranslation();
+  const [tooltip, setTooltip] = useState()
   const [node, setNode] = useState();
   const { i18n } = useTranslation();
 
   const width = 600
   const x = scaleBand().domain(casesbyday.map(c => { return new Date(c.primary) })).rangeRound([0, width]).paddingInner(0.2)
   const cx = scaleBand().domain(casesbyday.map(c => { return new Date(c.primary) })).rangeRound([0, width]).paddingInner(0.2)
-  const y = scaleLinear().domain([0, max(casesbyday, (d) => { return d.secondary })]).range([400, 0])
+  const y = scaleLinear().domain([0, Math.ceil(max(casesbyday, (d) => { return d.secondary }) / 100) * 100]).range([400, 0])
 
   useEffect(() => {
 
     if (node) {
       const xAxis = axisBottom().scale(x).tickFormat((_, i) => {
-        if (i % 7 == 0) {
-          return _.toLocaleDateString('en')
+        var options = { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric' };
+        if ((i + 3) % 7 == 0) {
+          return _.toLocaleDateString(i18n.language, options)
         } else {
           return ""
         }
       })
 
       const yAxis = axisLeft().scale(y)
-      const svg = select(node).append('g').classed('graph', true).attr('transform', 'translate(50,0)')
+      const svg = select(node).append('g').classed('graph', true).attr('transform', 'translate(50,20)')
+      /*
+            select('svg.map').call(
+              zoom().on('zoom', () => {
+                svg.attr('transform', event.transform)
+              })
+            );
+      */
 
-      select('svg.map').call(
-        zoom().on('zoom', () => {
-          svg.attr('transform', event.transform)
-        })
-      );
       const cases = select(node).select('g').selectAll('rect')
         .data(casesbyday);
 
@@ -65,9 +69,8 @@ const Analytics = (props) => {
         .y(function (d, i) {
           let sum = 0;
           for (let j = 0; j < 6; j++) {
-            sum += casesbyday[i + 6 - j].secondary
+            sum += casesbyday[i + 7 - j].secondary
           }
-          debugger
           return y(sum / 7)
 
         })
@@ -87,20 +90,23 @@ const Analytics = (props) => {
       select(node).select('g').append('g')
         .attr("class", "y axis")
         .call(yAxis);
-      select(node).select('g').append('g')
+
+      // grid
+      const grid = select(node).select('g').append('g')
         .attr("class", "grid")
         .style("stroke-width", 0.5)
         .call(axisLeft(y).ticks(5).tickSize(-width).tickFormat(() => { return "" }));
 
       // plot x axis
       select(node).select('g').append('g')
+        .attr("id", "x-axis")
         .attr("transform", "translate(0," + 400 + ")").call(xAxis).selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", "-.55em")
         .attr("transform", "rotate(-90)");
-      debugger
 
+      // plot actual cases
       cases
         .enter()
         .append('rect')
@@ -111,8 +117,10 @@ const Analytics = (props) => {
         .attr("height", function (d) { return 400 - y(d.secondary); });
 
 
-      select(node).select('g')
+      // 7 day average
+      const path = select(node).select('g')
         .append('path')
+        .attr("id", "line")
         .attr("fill", "none")
         .attr("stroke", "red")
         .attr("stroke-width", 1.5)
@@ -124,7 +132,7 @@ const Analytics = (props) => {
           }
         })))
 
-
+      // make the dots on the redline
       select(node).select("g").selectAll(".dot")
         .data(casesbyday.filter((p, i) => {
           if (i > 6) {
@@ -140,16 +148,84 @@ const Analytics = (props) => {
         .attr("cy", function (d, i) {
           let sum = 0;
           for (let j = 0; j < 6; j++) {
-            sum += casesbyday[i + 6 - j].secondary
+            sum += casesbyday[i + 7 - j].secondary
           }
-          debugger
           return y(sum / 7)
         })
         .attr("r", 2)
-        .on("mouseover", (d, i) => {
-          console.log(d.primary)
-          console.log(d.secondary)
-        })
+
+
+      const tooltip1 = select(node).select('g').append('text')
+      const tooltip2 = select(node).select('g').append('text')
+      const tooltip3 = select(node).select('g').append('text')
+
+      var bbox = tooltip1.node().getBBox()
+      var padding = 2
+      select(node).select('g.graph').insert('rect').attr("x", bbox.x - padding)
+        .attr("y", bbox.y - padding)
+        .attr("width", bbox.width + (padding * 2))
+        .attr("height", bbox.height + (padding * 2))
+        .style("fill", "white");
+
+
+      select(node).select('g').on('mousemove', (d, i, nodes) => {
+        let mx = mouse(nodes[i])[0] - 40
+        let my = mouse(nodes[i])[1]
+
+        var eachBand = x.step();
+        var index = Math.floor((mx / eachBand));
+        var gx = x.domain()[index];
+        let gy = y(my)
+
+        let mybisect = bisector((d) => d)
+        let hx = mybisect.left(casesbyday.map(c => { return new Date(c.primary) }), gx)
+
+
+        var options = { weekday: 'short', year: 'numeric', month: 'numeric', day: 'numeric' };
+        //tooltip1.attr('x', x(new Date(casesbyday[hx].primary))).attr('y', y(casesbyday[hx].secondary))
+        //tooltip2.attr('x', x(new Date(casesbyday[hx].primary))).attr('y', y(casesbyday[hx].secondary))
+        tooltip1.attr("dx", "1em")
+        tooltip2.attr("dx", "1em")
+        tooltip3.attr("dx", "1em")
+        tooltip1.attr("dy", "1em")
+        tooltip2.attr("dy", "2em")
+        tooltip3.attr("dy", "3em")
+        tooltip1.attr('background', 'white')
+        tooltip1.text(t('date') + `: ${new Date(casesbyday[hx].primary).toLocaleDateString(i18n.language, options)}`)
+        tooltip2.text(t('today') + `: ${casesbyday[hx].secondary}`)
+        if (hx >= 6) {
+          let sum = 0;
+          for (let i = 0; i < 6; i++) {
+            sum += casesbyday[hx - i].secondary
+          }
+
+          tooltip3.text(t('7_day_trend') + `: ${Math.floor(sum / 7)}`)
+        } else {
+          tooltip3.text(t('7_day_trend'))
+        }
+
+
+      })
+
+      /*
+            select(node).on('mousemove', (d, i) => {
+              const l = path.node().getTotalLength()
+              const w = path.node().getBBox().width
+              const s = l / w
+              const offsetLine = document.getElementById('x-axis').getBoundingClientRect().x
+              const offsetSVG = document.getElementsByClassName('map')[0].getBoundingClientRect().x
+              const m = mouse(node)
+              console.log((m[0] - (offsetLine - offsetSVG)))
+              let eachBand = x.step()
+              let index = Math.round(((m[0] - (offsetLine - offsetSVG)) / eachBand));
+              let val = x.domain()[index - 1];
+              if (val)
+                setTooltip({
+                  date: val
+                })
+            })
+      */
+
       cases.exit().remove();
     }
   }, [node]);
@@ -160,6 +236,7 @@ const Analytics = (props) => {
       <div className="text-center">
       </div>
       {props.children}
+      <h2 className="text-center">COVID-19 Tracker</h2>
       <div
         className="mx-auto text-center"
         style={{

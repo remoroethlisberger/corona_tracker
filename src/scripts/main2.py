@@ -68,9 +68,11 @@ def main2():
                     [{'primary': date, 'secondary': cases}])
                 df = df.append(list_of_cases, ignore_index=True)
 
-    df = df.sort_values(by='primary', ascending=False)
+    df = df.sort_values(by='primary', ascending=True)
     df['primary'] = df['primary'].apply(lambda x: x.strftime("%Y-%m-%d"))
     df.to_json(path + 'dailycases_pull.json', orient='records')
+    df.to_json(path + '../src/assets/data/dailycases_pull.json',
+               orient='records')
     return new_data_found
 
 

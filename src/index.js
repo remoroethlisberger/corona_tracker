@@ -50,8 +50,8 @@ ReactDOM.render(
           <Route key="register" path="/register" component={Register} />
           <Route key="contact" path="/contact" component={Contact} />
           <Route key="faq" path="/faq" component={FAQ} />
-          <Route key="analytics" path="/analytics" component={Analytics} />
-          <Route key="main" component={CoronaTracker} />
+          <Route key="map" path="/map" component={CoronaTracker} />
+          <Route key="main" component={Analytics} />
         </Switch>
       </HashRouter>
     </HttpsRedirect>

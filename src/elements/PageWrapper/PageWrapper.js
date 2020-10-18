@@ -5,19 +5,19 @@ import './PageWrapper.css';
 import Navbar from '../Navbar/Navbar';
 
 import ReactGA from 'react-ga';
-import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next';
 import SocialMediaBar from '../SocialMediaBar/SocialMediaBar';
 ReactGA.initialize('UA-174993755-1');
 
 const PageWrapper = (props) => {
-  //ReactGA.pageview(window.location.pathname + window.location.hash);
+  if (process.env.NODE_ENV != 'development') {
+    ReactGA.pageview(window.location.pathname + window.location.hash);
+  }
   const { t, i18n } = useTranslation();
+
+
   return (
     <div className="container p-0">
-      <Helmet>
-        <script data-ad-client="ca-pub-1880330986032558" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      </Helmet>
       <Navbar {...props} />
       <div className="main mt-2">
         <div className="py-2">{props.children}</div>
