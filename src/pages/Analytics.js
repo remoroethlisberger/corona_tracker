@@ -4,6 +4,7 @@ import { Chart } from "react-charts";
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import casesbyday from '../assets/data/dailycases_pull.json'
+import { isMobile } from 'mobile-device-detect'
 
 import {
   select,
@@ -33,7 +34,7 @@ const Analytics = (props) => {
   const [node, setNode] = useState();
   const { i18n } = useTranslation();
 
-  const width = 600
+  const width = isMobile ? document.getElementById('map-container')?.getBoundingClientRect().width - 50 : 600
   const x = scaleBand().domain(casesbyday.map(c => { return new Date(c.primary) })).rangeRound([0, width]).paddingInner(0.2)
   const cx = scaleBand().domain(casesbyday.map(c => { return new Date(c.primary) })).rangeRound([0, width]).paddingInner(0.2)
   const y = scaleLinear().domain([0, Math.ceil(max(casesbyday, (d) => { return d.secondary }) / 100) * 100]).range([400, 0])
@@ -169,7 +170,7 @@ const Analytics = (props) => {
 
 
       select(node).select('g').on('mousemove', (d, i, nodes) => {
-        let mx = mouse(nodes[i])[0] - 40
+        let mx = isMobile ? mouse(nodes[i])[0] - 35 : mouse(nodes[i])[0] - 35
         let my = mouse(nodes[i])[1]
 
         var eachBand = x.step();
@@ -238,11 +239,12 @@ const Analytics = (props) => {
       {props.children}
       <h2 className="text-center">COVID-19 Tracker</h2>
       <div
-        className="mx-auto text-center"
+        id="map-container"
+        className="mx-auto map-container text-center"
         style={{
           height: '500px',
           overflow: 'hidden',
-          maxWidth: '700px',
+          maxWidth: isMobile ? window.innerWidth : 650,
         }}
       >
         <svg
